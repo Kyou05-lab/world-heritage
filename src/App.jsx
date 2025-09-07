@@ -35,6 +35,8 @@ const SITES = [
     region: "Latin America",
     type: "Mixed",
     year: 1983,
+
+  
     image:
       "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1600&auto=format&fit=crop",
     short:
@@ -68,18 +70,61 @@ const SITES = [
     coords: { lat: 37.9715, lng: 23.7267 },
   },
   {
-    id: "serengeti",
-    name: "Serengeti National Park",
-    country: "Tanzania",
-    region: "Africa",
-    type: "Natural",
-    year: 1981,
-    image:
-      "https://images.unsplash.com/photo-1543248939-ecbd5a9cca80?q=80&w=1600&auto=format&fit=crop",
-    short:
-      "ヌーやシマウマの大移動で知られるサバンナ生態系。",
-    coords: { lat: -2.333, lng: 34.833 },
-  },
+  id: "angkor",
+  name: "Angkor",
+  country: "Cambodia",
+  region: "Asia-Pacific",
+  type: "Cultural",
+  year: 1992,
+  image: "https://images.unsplash.com/photo-1566401762677-2e4b9c1e3b1a?q=80&w=1600&auto=format&fit=crop",
+  short: "クメール王朝の都。アンコール・ワットなどの遺跡群。",
+  coords: { lat: 13.4125, lng: 103.8667 }
+},
+{
+  id: "historic-kyoto",
+  name: "古都京都の文化財 (Historic Monuments of Ancient Kyoto)",
+  country: "Japan",
+  region: "Asia-Pacific",
+  type: "Cultural",
+  year: 1994,
+  image: "https://images.unsplash.com/photo-1503467913725-8484b65b0715?q=80&w=1600&auto=format&fit=crop",
+  short: "京都・宇治・大津に点在する神社仏閣や庭園群。日本文化を象徴する景観と建築技術が評価。",
+  coords: { lat: 35.0116, lng: 135.7681 }
+},
+{
+  id: "the-great-wall",
+  name: "万里の長城 (The Great Wall)",
+  country: "China",
+  region: "Asia-Pacific",
+  type: "Cultural",
+  year: 1987,
+  image: "https://images.unsplash.com/photo-1549890762-0a3f8933bcf6?q=80&w=1600&auto=format&fit=crop",
+  short: "中国北部を横断する城壁群。防御施設としての歴史的重要性とスケールが顕著。",
+  coords: { lat: 40.4319, lng: 116.5704 }
+},
+{
+  id: "taj-mahal",
+  name: "タージ・マハル (Taj Mahal)",
+  country: "India",
+  region: "Asia-Pacific",
+  type: "Cultural",
+  year: 1983,
+  image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=1600&auto=format&fit=crop",
+  short: "ムガル帝国の皇帝が皇妃のために築いた白大理石の霊廟。完璧な対称性と装飾美。",
+  coords: { lat: 27.1751, lng: 78.0421 }
+},
+{
+  id: "yellowstone",
+  name: "Yellowstone National Park",
+  country: "United States of America",
+  region: "North America",
+  type: "Natural",
+  year: 1978,
+  image: "https://images.unsplash.com/photo-1470074558764-4e57757f6ab7?q=80&w=1600&auto=format&fit=crop",
+  short: "世界初の国立公園。間欠泉や温泉群、豊かな生態系を擁する巨大カルデラ地帯。",
+  coords: { lat: 44.6, lng: -110.5 }
+}
+
 ];
 
 const TYPES = ["Cultural", "Natural", "Mixed"];
@@ -431,3 +476,5 @@ export default function App() {
     </div>
   );
 }
+
+
