@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Small tweaks for body bg in dark mode if user's OS prefers it */
+:root { color-scheme: light dark; }
