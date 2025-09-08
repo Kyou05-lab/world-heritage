@@ -6,9 +6,12 @@ const SITES = [
   {
     id: "itsukushima-shrine",
     slug: "itsukushima_shrine",
-    name: "厳島神社 (Itsukushima Shinto Shrine)",
-    country: "Japan",
-    region: "Asia-Pacific",
+    name_ja: "厳島神社",
+    name_en: "Itsukushima Shinto Shrine",
+    country_ja: "日本",
+    country_en: "Japan",
+    region_ja: "アジア太平洋",
+    region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1996,
     image:
@@ -20,23 +23,28 @@ const SITES = [
   {
     id: "himeji-castle",
     slug: "himeji_castle",
-    name: "姫路城 (Himeji-jo)",
-    country: "Japan",
-    region: "Asia-Pacific",
+    name_ja: "姫路城",
+    name_en: "Himeji-jo",
+    country_ja: "日本",
+    country_en: "Japan",
+    region_ja: "アジア太平洋",
+    region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1993,
     image:
       "https://images.unsplash.com/photo-1602510392878-3a7d1e2bb65a?q=80&w=1600&auto=format&fit=crop",
-    short:
-      "保存状態の良い日本の城郭建築。白鷺城の名で親しまれる。",
+    short: "保存状態の良い日本の城郭建築。白鷺城の名で親しまれる。",
     coords: { lat: 34.839, lng: 134.693 },
   },
   {
     id: "machu-picchu",
     slug: "machu_picchu",
-    name: "Machu Picchu",
-    country: "Peru",
-    region: "Latin America",
+    name_ja: "マチュ・ピチュ",
+    name_en: "Machu Picchu",
+    country_ja: "ペルー",
+    country_en: "Peru",
+    region_ja: "ラテンアメリカ",
+    region_en: "Latin America",
     type: "Mixed",
     year: 1983,
     image:
@@ -48,23 +56,28 @@ const SITES = [
   {
     id: "great-barrier-reef",
     slug: "great_barrier_reef",
-    name: "Great Barrier Reef",
-    country: "Australia",
-    region: "Asia-Pacific",
+    name_ja: "グレート・バリア・リーフ",
+    name_en: "Great Barrier Reef",
+    country_ja: "オーストラリア",
+    country_en: "Australia",
+    region_ja: "アジア太平洋",
+    region_en: "Asia-Pacific",
     type: "Natural",
     year: 1981,
     image:
       "https://images.unsplash.com/photo-1501820488136-72669149e0d4?q=80&w=1600&auto=format&fit=crop",
-    short:
-      "世界最大の珊瑚礁生態系。多様な海洋生物の重要な生息地。",
+    short: "世界最大の珊瑚礁生態系。多様な海洋生物の重要な生息地。",
     coords: { lat: -18.287, lng: 147.699 },
   },
   {
     id: "acropolis",
     slug: "acropolis_athens",
-    name: "Acropolis, Athens",
-    country: "Greece",
-    region: "Europe",
+    name_ja: "アテネのアクロポリス",
+    name_en: "Acropolis, Athens",
+    country_ja: "ギリシャ",
+    country_en: "Greece",
+    region_ja: "ヨーロッパ",
+    region_en: "Europe",
     type: "Cultural",
     year: 1987,
     image:
@@ -76,9 +89,12 @@ const SITES = [
   {
     id: "angkor",
     slug: "angkor",
-    name: "Angkor",
-    country: "Cambodia",
-    region: "Asia-Pacific",
+    name_ja: "アンコール",
+    name_en: "Angkor",
+    country_ja: "カンボジア",
+    country_en: "Cambodia",
+    region_ja: "アジア太平洋",
+    region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1992,
     image:
@@ -89,9 +105,12 @@ const SITES = [
   {
     id: "historic-kyoto",
     slug: "kyoto_monuments",
-    name: "古都京都の文化財 (Historic Monuments of Ancient Kyoto)",
-    country: "Japan",
-    region: "Asia-Pacific",
+    name_ja: "古都京都の文化財",
+    name_en: "Historic Monuments of Ancient Kyoto",
+    country_ja: "日本",
+    country_en: "Japan",
+    region_ja: "アジア太平洋",
+    region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1994,
     image:
@@ -103,9 +122,12 @@ const SITES = [
   {
     id: "the-great-wall",
     slug: "great_wall",
-    name: "万里の長城 (The Great Wall)",
-    country: "China",
-    region: "Asia-Pacific",
+    name_ja: "万里の長城",
+    name_en: "The Great Wall",
+    country_ja: "中国",
+    country_en: "China",
+    region_ja: "アジア太平洋",
+    region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1987,
     image:
@@ -117,9 +139,12 @@ const SITES = [
   {
     id: "taj-mahal",
     slug: "taj_mahal",
-    name: "タージ・マハル (Taj Mahal)",
-    country: "India",
-    region: "Asia-Pacific",
+    name_ja: "タージ・マハル",
+    name_en: "Taj Mahal",
+    country_ja: "インド",
+    country_en: "India",
+    region_ja: "アジア太平洋",
+    region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1983,
     image:
@@ -131,9 +156,12 @@ const SITES = [
   {
     id: "yellowstone",
     slug: "yellowstone",
-    name: "Yellowstone National Park",
-    country: "United States of America",
-    region: "North America",
+    name_ja: "イエローストーン国立公園",
+    name_en: "Yellowstone National Park",
+    country_ja: "アメリカ合衆国",
+    country_en: "United States of America",
+    region_ja: "北アメリカ",
+    region_en: "North America",
     type: "Natural",
     year: 1978,
     image:
@@ -168,16 +196,22 @@ function Credit({ img }) {
   );
 }
 
-function SiteCard({ site, onOpen, onToggleFav, fav }) {
+function SiteCard({ site, onOpen, onToggleFav, fav, lang }) {
   const img = whImages[site.slug];
-  const src = img?.url || site.image; // Wikimedia優先、無ければ既存画像
+  const src = img?.url || site.image; // Wikimedia優先、なければ既存画像
+  const title =
+    (lang === "ja" ? site.name_ja : site.name_en) ||
+    site.name_en ||
+    site.name_ja;
+  const countryLabel = lang === "ja" ? site.country_ja : site.country_en;
+  const regionLabel = lang === "ja" ? site.region_ja : site.region_en;
 
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-slate-200/20 bg-white/70 shadow-sm backdrop-blur-md transition hover:-translate-y-0.5 hover:shadow-xl dark:border-white/10 dark:bg-slate-900/60">
       {src && (
         <img
           src={src}
-          alt={site.name}
+          alt={title}
           className="h-44 w-full object-cover transition group-hover:scale-[1.02]"
           loading="lazy"
           onError={(e) => {
@@ -189,7 +223,7 @@ function SiteCard({ site, onOpen, onToggleFav, fav }) {
       <div className="p-4">
         <div className="mb-2 flex items-center justify-between gap-2">
           <h3 className="text-base font-semibold leading-tight text-slate-900 dark:text-slate-50">
-            {site.name}
+            {title}
           </h3>
           <span
             className={classNames(
@@ -215,10 +249,10 @@ function SiteCard({ site, onOpen, onToggleFav, fav }) {
 
         <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
           <span className="rounded-full border border-slate-300/60 px-2 py-0.5 dark:border-white/10">
-            {site.country}
+            {countryLabel}
           </span>
           <span className="rounded-full border border-slate-300/60 px-2 py-0.5 dark:border-white/10">
-            {site.region}
+            {regionLabel}
           </span>
           <span className="rounded-full border border-slate-300/60 px-2 py-0.5 dark:border-white/10">
             Inscribed {site.year}
@@ -249,11 +283,17 @@ function SiteCard({ site, onOpen, onToggleFav, fav }) {
   );
 }
 
-function Detail({ site, onClose }) {
+function Detail({ site, onClose, lang }) {
   if (!site) return null;
 
   const img = site?.slug ? whImages[site.slug] : null;
   const src = img?.url || site.image;
+  const title =
+    (lang === "ja" ? site.name_ja : site.name_en) ||
+    site.name_en ||
+    site.name_ja;
+  const countryLabel = lang === "ja" ? site.country_ja : site.country_en;
+  const regionLabel = lang === "ja" ? site.region_ja : site.region_en;
 
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
@@ -263,10 +303,10 @@ function Detail({ site, onClose }) {
         <div className="p-5">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-              {site.name}
+              {title}
             </h3>
             <span className="text-sm text-slate-500 dark:text-slate-400">
-              {site.country} • {site.region} • {site.type} • {site.year}
+              {countryLabel} • {regionLabel} • {site.type} • {site.year}
             </span>
           </div>
 
@@ -309,6 +349,7 @@ function Detail({ site, onClose }) {
 }
 
 export default function App() {
+  // --- states ---
   const [query, setQuery] = useState("");
   const [types, setTypes] = useState([]); // empty = all
   const [country, setCountry] = useState("All");
@@ -321,37 +362,55 @@ export default function App() {
       return [];
     }
   });
+  const [lang, setLang] = useState("ja"); // ← 言語トグル
 
   useEffect(() => {
     localStorage.setItem("wh-favs", JSON.stringify(favs));
   }, [favs]);
 
+  // 国の候補を言語に応じて生成
   const countries = useMemo(() => {
-    return [
-      "All",
-      ...Array.from(new Set(SITES.map((s) => s.country))).sort((a, b) =>
-        a.localeCompare(b)
-      ),
-    ];
-  }, []);
+    const label = (s) => (lang === "ja" ? s.country_ja : s.country_en);
+    const set = new Set(SITES.map(label));
+    set.delete(undefined);
+    set.delete(null);
+    return ["All", ...Array.from(set).sort((a, b) => a.localeCompare(b))];
+  }, [lang]);
 
+  // 検索/フィルタ/並び替え（言語対応）
   const filtered = useMemo(() => {
-    let list = SITES.filter((s) =>
-      [s.name, s.country, s.region, s.type].some((v) =>
-        v.toLowerCase().includes(query.toLowerCase())
-      )
-    );
+    const getName = (s) => (lang === "ja" ? s.name_ja : s.name_en);
+    const getCountry = (s) => (lang === "ja" ? s.country_ja : s.country_en);
+    const getRegion = (s) => (lang === "ja" ? s.region_ja : s.region_en);
+
+    let list = SITES.filter((s) => {
+      const hay = [
+        s.name_ja,
+        s.name_en,
+        s.country_ja,
+        s.country_en,
+        s.region_ja,
+        s.region_en,
+        s.type,
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+      return hay.includes(query.toLowerCase());
+    });
+
     if (types.length) list = list.filter((s) => types.includes(s.type));
-    if (country !== "All") list = list.filter((s) => s.country === country);
+    if (country !== "All") list = list.filter((s) => getCountry(s) === country);
 
     list = list.sort((a, b) => {
-      if (sort === "name") return a.name.localeCompare(b.name);
+      if (sort === "name") return getName(a).localeCompare(getName(b));
       if (sort === "year") return a.year - b.year;
-      if (sort === "country") return a.country.localeCompare(b.country);
+      if (sort === "country")
+        return getCountry(a).localeCompare(getCountry(b));
       return 0;
     });
     return list;
-  }, [query, types, country, sort]);
+  }, [query, types, country, sort, lang]);
 
   function toggleType(t) {
     setTypes((prev) =>
@@ -397,6 +456,13 @@ export default function App() {
               >
                 UNESCO List ↗
               </a>
+              {/* 言語トグル */}
+              <button
+                onClick={() => setLang(lang === "ja" ? "en" : "ja")}
+                className="rounded-lg border border-slate-300 px-2 py-1 font-semibold hover:bg-slate-50 dark:border-white/10 dark:hover:bg-white/5"
+              >
+                {lang === "ja" ? "EN" : "日本語"}
+              </button>
             </div>
           </div>
         </div>
@@ -509,6 +575,7 @@ export default function App() {
                 <SiteCard
                   key={s.id}
                   site={s}
+                  lang={lang}
                   onOpen={setOpen}
                   onToggleFav={toggleFav}
                   fav={favs.includes(s.id)}
@@ -531,6 +598,7 @@ export default function App() {
                 <SiteCard
                   key={s.id}
                   site={s}
+                  lang={lang}
                   onOpen={setOpen}
                   onToggleFav={toggleFav}
                   fav
@@ -546,7 +614,7 @@ export default function App() {
         </footer>
       </div>
 
-      <Detail site={open} onClose={() => setOpen(null)} />
+      <Detail site={open} onClose={() => setOpen(null)} lang={lang} />
     </div>
   );
 }
