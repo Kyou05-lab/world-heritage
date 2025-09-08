@@ -1,9 +1,11 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { whImages } from "./assets/whImages";
 
 // ---- Sample dataset (add/edit freely) ----
 const SITES = [
   {
     id: "itsukushima-shrine",
+    slug: "itsukushima_shrine",
     name: "厳島神社 (Itsukushima Shinto Shrine)",
     country: "Japan",
     region: "Asia-Pacific",
@@ -17,6 +19,7 @@ const SITES = [
   },
   {
     id: "himeji-castle",
+    slug: "himeji_castle",
     name: "姫路城 (Himeji-jo)",
     country: "Japan",
     region: "Asia-Pacific",
@@ -30,13 +33,12 @@ const SITES = [
   },
   {
     id: "machu-picchu",
+    slug: "machu_picchu",
     name: "Machu Picchu",
     country: "Peru",
     region: "Latin America",
     type: "Mixed",
     year: 1983,
-
-  
     image:
       "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1600&auto=format&fit=crop",
     short:
@@ -45,6 +47,7 @@ const SITES = [
   },
   {
     id: "great-barrier-reef",
+    slug: "great_barrier_reef",
     name: "Great Barrier Reef",
     country: "Australia",
     region: "Asia-Pacific",
@@ -58,6 +61,7 @@ const SITES = [
   },
   {
     id: "acropolis",
+    slug: "acropolis_athens",
     name: "Acropolis, Athens",
     country: "Greece",
     region: "Europe",
@@ -70,61 +74,74 @@ const SITES = [
     coords: { lat: 37.9715, lng: 23.7267 },
   },
   {
-  id: "angkor",
-  name: "Angkor",
-  country: "Cambodia",
-  region: "Asia-Pacific",
-  type: "Cultural",
-  year: 1992,
-  image: "https://images.unsplash.com/photo-1566401762677-2e4b9c1e3b1a?q=80&w=1600&auto=format&fit=crop",
-  short: "クメール王朝の都。アンコール・ワットなどの遺跡群。",
-  coords: { lat: 13.4125, lng: 103.8667 }
-},
-{
-  id: "historic-kyoto",
-  name: "古都京都の文化財 (Historic Monuments of Ancient Kyoto)",
-  country: "Japan",
-  region: "Asia-Pacific",
-  type: "Cultural",
-  year: 1994,
-  image: "https://images.unsplash.com/photo-1503467913725-8484b65b0715?q=80&w=1600&auto=format&fit=crop",
-  short: "京都・宇治・大津に点在する神社仏閣や庭園群。日本文化を象徴する景観と建築技術が評価。",
-  coords: { lat: 35.0116, lng: 135.7681 }
-},
-{
-  id: "the-great-wall",
-  name: "万里の長城 (The Great Wall)",
-  country: "China",
-  region: "Asia-Pacific",
-  type: "Cultural",
-  year: 1987,
-  image: "https://images.unsplash.com/photo-1549890762-0a3f8933bcf6?q=80&w=1600&auto=format&fit=crop",
-  short: "中国北部を横断する城壁群。防御施設としての歴史的重要性とスケールが顕著。",
-  coords: { lat: 40.4319, lng: 116.5704 }
-},
-{
-  id: "taj-mahal",
-  name: "タージ・マハル (Taj Mahal)",
-  country: "India",
-  region: "Asia-Pacific",
-  type: "Cultural",
-  year: 1983,
-  image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=1600&auto=format&fit=crop",
-  short: "ムガル帝国の皇帝が皇妃のために築いた白大理石の霊廟。完璧な対称性と装飾美。",
-  coords: { lat: 27.1751, lng: 78.0421 }
-},
-{
-  id: "yellowstone",
-  name: "Yellowstone National Park",
-  country: "United States of America",
-  region: "North America",
-  type: "Natural",
-  year: 1978,
-  image: "https://images.unsplash.com/photo-1470074558764-4e57757f6ab7?q=80&w=1600&auto=format&fit=crop",
-  short: "世界初の国立公園。間欠泉や温泉群、豊かな生態系を擁する巨大カルデラ地帯。",
-  coords: { lat: 44.6, lng: -110.5 }
-}
-
+    id: "angkor",
+    slug: "angkor",
+    name: "Angkor",
+    country: "Cambodia",
+    region: "Asia-Pacific",
+    type: "Cultural",
+    year: 1992,
+    image:
+      "https://images.unsplash.com/photo-1566401762677-2e4b9c1e3b1a?q=80&w=1600&auto=format&fit=crop",
+    short: "クメール王朝の都。アンコール・ワットなどの遺跡群。",
+    coords: { lat: 13.4125, lng: 103.8667 },
+  },
+  {
+    id: "historic-kyoto",
+    slug: "kyoto_monuments",
+    name: "古都京都の文化財 (Historic Monuments of Ancient Kyoto)",
+    country: "Japan",
+    region: "Asia-Pacific",
+    type: "Cultural",
+    year: 1994,
+    image:
+      "https://images.unsplash.com/photo-1503467913725-8484b65b0715?q=80&w=1600&auto=format&fit=crop",
+    short:
+      "京都・宇治・大津に点在する神社仏閣や庭園群。日本文化を象徴する景観と建築技術が評価。",
+    coords: { lat: 35.0116, lng: 135.7681 },
+  },
+  {
+    id: "the-great-wall",
+    slug: "great_wall",
+    name: "万里の長城 (The Great Wall)",
+    country: "China",
+    region: "Asia-Pacific",
+    type: "Cultural",
+    year: 1987,
+    image:
+      "https://images.unsplash.com/photo-1549890762-0a3f8933bcf6?q=80&w=1600&auto=format&fit=crop",
+    short:
+      "中国北部を横断する城壁群。防御施設としての歴史的重要性とスケールが顕著。",
+    coords: { lat: 40.4319, lng: 116.5704 },
+  },
+  {
+    id: "taj-mahal",
+    slug: "taj_mahal",
+    name: "タージ・マハル (Taj Mahal)",
+    country: "India",
+    region: "Asia-Pacific",
+    type: "Cultural",
+    year: 1983,
+    image:
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=1600&auto=format&fit=crop",
+    short:
+      "ムガル帝国の皇帝が皇妃のために築いた白大理石の霊廟。完璧な対称性と装飾美。",
+    coords: { lat: 27.1751, lng: 78.0421 },
+  },
+  {
+    id: "yellowstone",
+    slug: "yellowstone",
+    name: "Yellowstone National Park",
+    country: "United States of America",
+    region: "North America",
+    type: "Natural",
+    year: 1978,
+    image:
+      "https://images.unsplash.com/photo-1470074558764-4e57757f6ab7?q=80&w=1600&auto=format&fit=crop",
+    short:
+      "世界初の国立公園。間欠泉や温泉群、豊かな生態系を擁する巨大カルデラ地帯。",
+    coords: { lat: 44.6, lng: -110.5 },
+  },
 ];
 
 const TYPES = ["Cultural", "Natural", "Mixed"];
@@ -133,15 +150,42 @@ function classNames(...xs) {
   return xs.filter(Boolean).join(" ");
 }
 
+function Credit({ img }) {
+  if (!img) return null;
+  return (
+    <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+      Photo: {img.author} /{" "}
+      <a
+        className="underline"
+        href={img.source}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Wikimedia Commons
+      </a>{" "}
+      ({img.license})
+    </p>
+  );
+}
+
 function SiteCard({ site, onOpen, onToggleFav, fav }) {
+  const img = whImages[site.slug];
+  const src = img?.url || site.image; // Wikimedia優先、無ければ既存画像
+
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-slate-200/20 bg-white/70 shadow-sm backdrop-blur-md transition hover:-translate-y-0.5 hover:shadow-xl dark:border-white/10 dark:bg-slate-900/60">
-      <img
-        src={site.image}
-        alt={site.name}
-        className="h-44 w-full object-cover transition group-hover:scale-[1.02]"
-        loading="lazy"
-      />
+      {src && (
+        <img
+          src={src}
+          alt={site.name}
+          className="h-44 w-full object-cover transition group-hover:scale-[1.02]"
+          loading="lazy"
+          onError={(e) => {
+            // 読み込み失敗時は画像を消して崩れ防止
+            e.currentTarget.style.display = "none";
+          }}
+        />
+      )}
       <div className="p-4">
         <div className="mb-2 flex items-center justify-between gap-2">
           <h3 className="text-base font-semibold leading-tight text-slate-900 dark:text-slate-50">
@@ -150,15 +194,25 @@ function SiteCard({ site, onOpen, onToggleFav, fav }) {
           <span
             className={classNames(
               "rounded-full px-2 py-0.5 text-xs font-semibold",
-              site.type === "Cultural" && "bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-200",
-              site.type === "Natural" && "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-200",
-              site.type === "Mixed" && "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-200"
+              site.type === "Cultural" &&
+                "bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-200",
+              site.type === "Natural" &&
+                "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-200",
+              site.type === "Mixed" &&
+                "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-200"
             )}
           >
             {site.type}
           </span>
         </div>
-        <p className="line-clamp-2 text-sm text-slate-600 dark:text-slate-300">{site.short}</p>
+
+        <p className="line-clamp-2 text-sm text-slate-600 dark:text-slate-300">
+          {site.short}
+        </p>
+
+        {/* クレジット（Wikimedia画像があるときだけ表示） */}
+        <Credit img={img} />
+
         <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
           <span className="rounded-full border border-slate-300/60 px-2 py-0.5 dark:border-white/10">
             {site.country}
@@ -197,28 +251,38 @@ function SiteCard({ site, onOpen, onToggleFav, fav }) {
 
 function Detail({ site, onClose }) {
   if (!site) return null;
+
+  const img = site?.slug ? whImages[site.slug] : null;
+  const src = img?.url || site.image;
+
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
       <div className="absolute inset-0 bg-slate-900/60" onClick={onClose} />
       <div className="relative m-2 w-full max-w-3xl overflow-hidden rounded-2xl bg-white shadow-2xl dark:bg-slate-900">
-        <img src={site.image} alt="" className="h-60 w-full object-cover" />
+        {src && <img src={src} alt="" className="h-60 w-full object-cover" />}
         <div className="p-5">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white">{site.name}</h3>
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              {site.name}
+            </h3>
             <span className="text-sm text-slate-500 dark:text-slate-400">
               {site.country} • {site.region} • {site.type} • {site.year}
             </span>
           </div>
-          <p className="mt-3 text-slate-700 dark:text-slate-300">
-            {site.short}
-          </p>
+
+          {/* クレジット */}
+          <Credit img={img} />
+
+          <p className="mt-3 text-slate-700 dark:text-slate-300">{site.short}</p>
 
           <div className="mt-4 grid gap-3 text-sm text-slate-600 dark:text-slate-300 sm:grid-cols-2">
             <div className="rounded-xl border border-slate-200 p-3 dark:border-white/10">
               <div className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 Coordinates
               </div>
-              <div className="mt-1">{site.coords.lat}, {site.coords.lng}</div>
+              <div className="mt-1">
+                {site.coords.lat}, {site.coords.lng}
+              </div>
             </div>
             <a
               href={`https://www.google.com/maps?q=${site.coords.lat},${site.coords.lng}`}
@@ -296,7 +360,9 @@ export default function App() {
   }
 
   function toggleFav(id) {
-    setFavs((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+    setFavs((prev) =>
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
+    );
   }
 
   return (
@@ -307,7 +373,9 @@ export default function App() {
           <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3">
             <div className="flex items-center gap-2">
               <div className="h-3 w-3 rounded-full bg-gradient-to-tr from-sky-400 to-cyan-300 ring-4 ring-cyan-200/30 dark:ring-cyan-400/20" />
-              <span className="text-sm font-bold tracking-wide">World Heritage Explorer</span>
+              <span className="text-sm font-bold tracking-wide">
+                World Heritage Explorer
+              </span>
             </div>
             <div className="flex items-center gap-2 text-xs">
               <a
@@ -343,7 +411,8 @@ export default function App() {
               世界遺産紹介サイト <span className="text-sky-600">(Demo)</span>
             </h1>
             <p className="mt-3 text-slate-600 dark:text-slate-300">
-              検索 / 絞り込み / 並び替え / お気に入り保存（ローカル）に対応。カードをクリックして詳細を表示。データは下の配列 <code>SITES</code> を編集して増やせます。
+              検索 / 絞り込み / 並び替え / お気に入り保存（ローカル）に対応。カードをクリックして詳細を表示。データは下の配列{" "}
+              <code>SITES</code> を編集して増やせます。
             </p>
 
             {/* Controls */}
@@ -414,7 +483,9 @@ export default function App() {
           </div>
 
           <div className="rounded-3xl border border-slate-200/60 bg-gradient-to-br from-sky-100 via-white to-cyan-50 p-6 shadow-sm dark:border-white/10 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900">
-            <h2 className="text-sm font-bold text-slate-700 dark:text-slate-200">お気に入りの書き出し</h2>
+            <h2 className="text-sm font-bold text-slate-700 dark:text-slate-200">
+              お気に入りの書き出し
+            </h2>
             <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
               ブックマークしたID一覧をコピーできます。別ページの共有や保存にどうぞ。
             </p>
@@ -451,7 +522,9 @@ export default function App() {
         <section id="favorites" className="mt-10">
           <h2 className="mb-3 text-lg font-bold">Favorites</h2>
           {favs.length === 0 ? (
-            <p className="text-sm text-slate-600 dark:text-slate-300">まだブックマークがありません。カードの「Bookmark」を押すと追加されます。</p>
+            <p className="text-sm text-slate-600 dark:text-slate-300">
+              まだブックマークがありません。カードの「Bookmark」を押すと追加されます。
+            </p>
           ) : (
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {SITES.filter((s) => favs.includes(s.id)).map((s) => (
@@ -468,7 +541,8 @@ export default function App() {
         </section>
 
         <footer className="mt-12 border-t border-slate-200/60 py-6 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">
-          © {new Date().getFullYear()} World Heritage Explorer • Demo dataset. Images via Unsplash.
+          © {new Date().getFullYear()} World Heritage Explorer • Demo dataset.
+          Images via Wikimedia/Unsplash.
         </footer>
       </div>
 
@@ -476,5 +550,3 @@ export default function App() {
     </div>
   );
 }
-
-
