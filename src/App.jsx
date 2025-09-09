@@ -1,9 +1,14 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { whImages } from "./assets/whImages";
+import L from "leaflet";
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
-/* ===============================
-   Demo dataset（元のまま）
-================================ */
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: markerIcon2x,
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
+});
+
 const SITES = [
   {
     id: "itsukushima-shrine",
@@ -578,21 +583,29 @@ export default function App() {
             </div>
           </div>
 
-          {/* Export box */}
-          <div className="rounded-3xl border border-slate-200/60 bg-gradient-to-br from-sky-100 via-white to-cyan-50 p-6 shadow-sm dark:border-white/10 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900">
-            <h2 className="text-sm font-bold text-slate-700 dark:text-slate-200">
-              お気に入りの書き出し
-            </h2>
-            <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
-              ブックマークしたID一覧をコピーできます。別ページの共有や保存にどうぞ。
-            </p>
-            <textarea
-              readOnly
-              value={JSON.stringify(favs, null, 2)}
-              className="mt-3 h-36 w-full rounded-xl border border-slate-300/70 bg-white/70 p-3 text-xs font-mono leading-relaxed dark:border-white/10 dark:bg-slate-900/60"
-            />
-          </div>
-        </section>
+         {/* Map セクション */}
+<div className="rounded-3xl border border-slate-200/60 bg-white/80 shadow-sm dark:border-white/10 dark:bg-slate-900/50">
+  <MapContainer
+    center={[20, 0]}      // 初期表示（世界地図っぽく）
+    zoom={2}
+    style={{ height: "400px", width: "100%" }}
+    scrollWheelZoom={false}
+  >
+    <TileLayer
+      attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    />
+    {filtered.map((s) => (
+      <Marker key={s.id} position={[s.coords.lat, s.coords.lng]}>
+        <Popup>
+          <strong>{lang === "ja" ? s.name_ja : s.name_en}</strong><br />
+          {s.country_ja || s.country_en}
+        </Popup>
+      </Marker>
+    ))}
+  </MapContainer>
+</div>
+
 
         {/* Grid */}
         <section>
