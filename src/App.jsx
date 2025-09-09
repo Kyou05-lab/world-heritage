@@ -1,7 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { whImages } from "./assets/whImages";
 
-// ---- Sample dataset (add/edit freely) ----
+/* ===============================
+   Demo dataset（元のまま）
+================================ */
 const SITES = [
   {
     id: "itsukushima-shrine",
@@ -174,6 +176,9 @@ const SITES = [
 
 const TYPES = ["Cultural", "Natural", "Mixed"];
 
+/* ===============================
+   Helpers
+================================ */
 function classNames(...xs) {
   return xs.filter(Boolean).join(" ");
 }
@@ -182,9 +187,9 @@ function Credit({ img }) {
   if (!img) return null;
   return (
     <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
-      Photo: {img.author} /{" "}
+      Photo: {img.author}{" "}
       <a
-        className="underline"
+        className="underline underline-offset-4"
         href={img.source}
         target="_blank"
         rel="noreferrer"
@@ -196,9 +201,12 @@ function Credit({ img }) {
   );
 }
 
+/* ===============================
+   Card
+================================ */
 function SiteCard({ site, onOpen, onToggleFav, fav, lang }) {
   const img = whImages[site.slug];
-  const src = img?.url || site.image; // Wikimedia優先、なければ既存画像
+  const src = img?.url || site.image;
   const title =
     (lang === "ja" ? site.name_ja : site.name_en) ||
     site.name_en ||
@@ -207,47 +215,44 @@ function SiteCard({ site, onOpen, onToggleFav, fav, lang }) {
   const regionLabel = lang === "ja" ? site.region_ja : site.region_en;
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-slate-200/20 bg-white/70 shadow-sm backdrop-blur-md transition hover:-translate-y-0.5 hover:shadow-xl dark:border-white/10 dark:bg-slate-900/60">
-      {src && (
-        <img
-          src={src}
-          alt={title}
-          className="h-44 w-full object-cover transition group-hover:scale-[1.02]"
-          loading="lazy"
-          onError={(e) => {
-            // 読み込み失敗時は画像を消して崩れ防止
-            e.currentTarget.style.display = "none";
-          }}
-        />
-      )}
+    <article className="group relative overflow-hidden rounded-2xl border border-slate-200/30 bg-white/70 shadow-sm backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl dark:border-white/10 dark:bg-slate-900/60">
+      {/* アニメ化するための画像ラッパ */}
+      <div className="overflow-hidden">
+        {src && (
+          <img
+            src={src}
+            alt={title}
+            loading="lazy"
+            className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            onError={(e) => (e.currentTarget.style.display = "none")}
+          />
+        )}
+      </div>
+
+      {/* タイプバッジ（右上） */}
+      <span
+        className={classNames(
+          "absolute right-3 top-3 rounded-full px-2.5 py-1 text-xs font-bold text-white shadow-sm",
+          site.type === "Cultural" && "bg-gradient-to-r from-pink-500 to-rose-500",
+          site.type === "Natural" && "bg-gradient-to-r from-emerald-500 to-teal-500",
+          site.type === "Mixed" && "bg-gradient-to-r from-indigo-500 to-violet-500"
+        )}
+      >
+        {site.type}
+      </span>
+
       <div className="p-4">
-        <div className="mb-2 flex items-center justify-between gap-2">
-          <h3 className="text-base font-semibold leading-tight text-slate-900 dark:text-slate-50">
-            {title}
-          </h3>
-          <span
-            className={classNames(
-              "rounded-full px-2 py-0.5 text-xs font-semibold",
-              site.type === "Cultural" &&
-                "bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-200",
-              site.type === "Natural" &&
-                "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-200",
-              site.type === "Mixed" &&
-                "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-200"
-            )}
-          >
-            {site.type}
-          </span>
-        </div>
+        <h3 className="mb-1 text-base font-semibold leading-tight text-slate-900 dark:text-slate-50">
+          {title}
+        </h3>
 
         <p className="line-clamp-2 text-sm text-slate-600 dark:text-slate-300">
           {site.short}
         </p>
 
-        {/* クレジット（Wikimedia画像があるときだけ表示） */}
         <Credit img={img} />
 
-        <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-slate-600 dark:text-slate-400">
           <span className="rounded-full border border-slate-300/60 px-2 py-0.5 dark:border-white/10">
             {countryLabel}
           </span>
@@ -258,17 +263,24 @@ function SiteCard({ site, onOpen, onToggleFav, fav, lang }) {
             Inscribed {site.year}
           </span>
         </div>
+
         <div className="mt-4 flex items-center gap-2">
           <button
             onClick={() => onOpen(site)}
-            className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700"
+            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-b from-sky-500 to-sky-600 px-3 py-2 text-sm font-semibold text-white shadow-md transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300/40"
           >
+            {/* link icon */}
+            <svg width="16" height="16" viewBox="0 0 24 24" className="-ml-0.5">
+              <path fill="currentColor" d="M10.59 13.41a1 1 0 0 1 0-1.41l2-2a1 1 0 1 1 1.41 1.41l-2 2a1 1 0 0 1-1.41 0Z"/>
+              <path fill="currentColor" d="M13.54 7.05a3.5 3.5 0 0 1 4.95 4.95l-2.12 2.12a3.5 3.5 0 0 1-4.95 0a1 1 0 1 1 1.41-1.41a1.5 1.5 0 0 0 2.12 0l2.12-2.12a1.5 1.5 0 0 0-2.12-2.12a1 1 0 0 1-1.41-1.41Zm-8.02 8.02l2.12-2.12a3.5 3.5 0 0 1 4.95 0a1 1 0 0 1-1.41 1.41a1.5 1.5 0 0 0-2.12 0l-2.12 2.12a1.5 1.5 0 0 0 2.12 2.12a1 1 0 1 1 1.41 1.41a3.5 3.5 0 0 1-4.95-4.95Z"/>
+            </svg>
             Learn more
           </button>
+
           <button
             onClick={() => onToggleFav(site.id)}
             className={classNames(
-              "rounded-xl border px-3 py-2 text-sm font-semibold transition",
+              "rounded-xl border px-3 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-300/30",
               fav
                 ? "border-amber-400 bg-amber-50 text-amber-800 dark:border-amber-300/40 dark:bg-amber-300/10 dark:text-amber-200"
                 : "border-slate-300 bg-white text-slate-700 hover:bg-slate-50 dark:border-white/10 dark:bg-transparent dark:text-slate-200 dark:hover:bg-white/5"
@@ -279,10 +291,13 @@ function SiteCard({ site, onOpen, onToggleFav, fav, lang }) {
           </button>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
+/* ===============================
+   Detail (モーダル)
+================================ */
 function Detail({ site, onClose, lang }) {
   if (!site) return null;
 
@@ -310,7 +325,6 @@ function Detail({ site, onClose, lang }) {
             </span>
           </div>
 
-          {/* クレジット */}
           <Credit img={img} />
 
           <p className="mt-3 text-slate-700 dark:text-slate-300">{site.short}</p>
@@ -348,8 +362,10 @@ function Detail({ site, onClose, lang }) {
   );
 }
 
+/* ===============================
+   App（ヘッダー＋検索パネル＋グリッド）
+================================ */
 export default function App() {
-  // --- states ---
   const [query, setQuery] = useState("");
   const [types, setTypes] = useState([]); // empty = all
   const [country, setCountry] = useState("All");
@@ -362,13 +378,13 @@ export default function App() {
       return [];
     }
   });
-  const [lang, setLang] = useState("ja"); // ← 言語トグル
+  const [lang, setLang] = useState("ja"); // 言語トグル
 
   useEffect(() => {
     localStorage.setItem("wh-favs", JSON.stringify(favs));
   }, [favs]);
 
-  // 国の候補を言語に応じて生成
+  // 国リスト（言語別）
   const countries = useMemo(() => {
     const label = (s) => (lang === "ja" ? s.country_ja : s.country_en);
     const set = new Set(SITES.map(label));
@@ -377,7 +393,7 @@ export default function App() {
     return ["All", ...Array.from(set).sort((a, b) => a.localeCompare(b))];
   }, [lang]);
 
-  // 検索/フィルタ/並び替え（言語対応）
+  // フィルタ＆ソート
   const filtered = useMemo(() => {
     const getName = (s) => (lang === "ja" ? s.name_ja : s.name_en);
     const getCountry = (s) => (lang === "ja" ? s.country_ja : s.country_en);
@@ -425,10 +441,16 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-50 via-white to-white p-5 text-slate-900 dark:from-slate-950 dark:via-slate-950 dark:to-slate-950 dark:text-slate-50">
+    <div className="relative min-h-screen overflow-x-clip bg-gradient-to-b from-sky-50 via-white to-white p-5 text-slate-900 dark:from-slate-950 dark:via-slate-950 dark:to-slate-950 dark:text-slate-50">
+      {/* デコ背景（柔らかい放射グラデ） */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-20 -left-24 h-[520px] w-[520px] rounded-full bg-sky-200/30 blur-3xl dark:bg-cyan-400/10" />
+        <div className="absolute -right-24 top-10 h-[560px] w-[560px] rounded-full bg-emerald-200/30 blur-3xl dark:bg-emerald-400/10" />
+      </div>
+
       <div className="mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="sticky top-0 z-40 -mx-5 mb-4 border-b border-slate-200/60 bg-white/70 backdrop-blur-md dark:border-white/10 dark:bg-slate-900/40">
+        {/* Header（ガラス＋シャドウ＋スイッチ） */}
+        <div className="sticky top-0 z-40 -mx-5 mb-5 border-b border-slate-200/60 bg-white/60 backdrop-blur-md shadow-sm dark:border-white/10 dark:bg-slate-900/40">
           <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3">
             <div className="flex items-center gap-2">
               <div className="h-3 w-3 rounded-full bg-gradient-to-tr from-sky-400 to-cyan-300 ring-4 ring-cyan-200/30 dark:ring-cyan-400/20" />
@@ -438,50 +460,55 @@ export default function App() {
             </div>
             <div className="flex items-center gap-2 text-xs">
               <a
-                className="rounded-lg border border-slate-300 px-2 py-1 font-semibold hover:bg-slate-50 dark:border-white/10 dark:hover:bg-white/5"
+                className="rounded-full border border-slate-300 px-3 py-1 font-semibold hover:bg-slate-50 dark:border-white/10 dark:hover:bg-white/5"
                 href="#favorites"
                 onClick={(e) => {
                   e.preventDefault();
-                  const target = document.getElementById("favorites");
-                  target?.scrollIntoView({ behavior: "smooth" });
+                  document.getElementById("favorites")?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 Favorites ({favs.length})
               </a>
               <a
-                className="rounded-lg border border-slate-300 px-2 py-1 font-semibold hover:bg-slate-50 dark:border-white/10 dark:hover:bg-white/5"
+                className="rounded-full border border-slate-300 px-3 py-1 font-semibold hover:bg-slate-50 dark:border-white/10 dark:hover:bg-white/5"
                 href="https://whc.unesco.org/en/list/"
                 target="_blank"
                 rel="noreferrer"
               >
                 UNESCO List ↗
               </a>
-              {/* 言語トグル */}
+              {/* 言語トグル（スイッチ） */}
               <button
                 onClick={() => setLang(lang === "ja" ? "en" : "ja")}
-                className="rounded-lg border border-slate-300 px-2 py-1 font-semibold hover:bg-slate-50 dark:border-white/10 dark:hover:bg-white/5"
+                className="relative inline-flex h-6 w-12 items-center rounded-full bg-slate-300 transition dark:bg-slate-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300/40"
+                aria-label="toggle language"
               >
-                {lang === "ja" ? "EN" : "日本語"}
+                <span
+                  className={classNames(
+                    "inline-block h-5 w-5 transform rounded-full bg-white shadow-md transition",
+                    lang === "ja" ? "translate-x-6" : "translate-x-1"
+                  )}
+                />
               </button>
+              <span className="ml-1">{lang === "ja" ? "日本語" : "EN"}</span>
             </div>
           </div>
         </div>
 
-        {/* Hero */}
+        {/* Hero / Controls */}
         <section className="mb-6 grid gap-4 sm:grid-cols-[1.1fr_.9fr]">
           <div className="rounded-3xl border border-slate-200/60 bg-white/80 p-6 shadow-sm dark:border-white/10 dark:bg-slate-900/50">
             <p className="mb-2 inline-flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
               Curate & learn about UNESCO World Heritage Sites
             </p>
             <h1 className="text-2xl font-black leading-tight sm:text-4xl">
-              世界遺産紹介サイト <span className="text-sky-600">(Demo)</span>
+              世界遺産紹介サイト <span className="bg-gradient-to-r from-sky-500 to-cyan-500 bg-clip-text text-transparent">(Demo)</span>
             </h1>
             <p className="mt-3 text-slate-600 dark:text-slate-300">
               検索 / 絞り込み / 並び替え / お気に入り保存（ローカル）に対応。カードをクリックして詳細を表示。データは下の配列{" "}
               <code>SITES</code> を編集して増やせます。
             </p>
 
-            {/* Controls */}
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               <div className="col-span-2">
                 <label className="mb-1 block text-xs font-semibold text-slate-500 dark:text-slate-400">
@@ -494,6 +521,7 @@ export default function App() {
                   className="w-full rounded-xl border border-slate-300/70 bg-white/70 px-3 py-2 outline-none ring-cyan-300/30 transition focus:ring-4 dark:border-white/10 dark:bg-slate-900/60"
                 />
               </div>
+
               <div>
                 <label className="mb-1 block text-xs font-semibold text-slate-500 dark:text-slate-400">
                   種別フィルタ
@@ -504,9 +532,9 @@ export default function App() {
                       key={t}
                       onClick={() => toggleType(t)}
                       className={classNames(
-                        "rounded-xl border px-3 py-2 text-sm font-semibold",
+                        "rounded-xl border px-3 py-2 text-sm font-semibold transition",
                         types.includes(t)
-                          ? "border-sky-400 bg-sky-50 text-sky-700 dark:border-sky-300/40 dark:bg-sky-300/10 dark:text-sky-200"
+                          ? "border-sky-400 bg-sky-50 text-sky-700 shadow-sm dark:border-sky-300/40 dark:bg-sky-300/10 dark:text-sky-200"
                           : "border-slate-300 bg-white text-slate-700 hover:bg-slate-50 dark:border-white/10 dark:bg-transparent dark:text-slate-200 dark:hover:bg-white/5"
                       )}
                     >
@@ -515,6 +543,7 @@ export default function App() {
                   ))}
                 </div>
               </div>
+
               <div>
                 <label className="mb-1 block text-xs font-semibold text-slate-500 dark:text-slate-400">
                   国・地域
@@ -531,6 +560,7 @@ export default function App() {
                   ))}
                 </select>
               </div>
+
               <div>
                 <label className="mb-1 block text-xs font-semibold text-slate-500 dark:text-slate-400">
                   並び替え
@@ -548,6 +578,7 @@ export default function App() {
             </div>
           </div>
 
+          {/* Export box */}
           <div className="rounded-3xl border border-slate-200/60 bg-gradient-to-br from-sky-100 via-white to-cyan-50 p-6 shadow-sm dark:border-white/10 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900">
             <h2 className="text-sm font-bold text-slate-700 dark:text-slate-200">
               お気に入りの書き出し
@@ -585,7 +616,7 @@ export default function App() {
           )}
         </section>
 
-        {/* Favorites section */}
+        {/* Favorites */}
         <section id="favorites" className="mt-10">
           <h2 className="mb-3 text-lg font-bold">Favorites</h2>
           {favs.length === 0 ? (
