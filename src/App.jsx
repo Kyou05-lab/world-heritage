@@ -26,10 +26,8 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1996,
-    image:
-      "https://images.unsplash.com/photo-1559717201-fbb671ff56c1?q=80&w=1600&auto=format&fit=crop",
-    short:
-      "海に浮かぶ大鳥居で有名な神社。自然と信仰が一体となった景観が評価。",
+     image: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Itsukushima_torii_2020.jpg",
+    short:"海に浮かぶ大鳥居で有名な神社。自然と信仰が一体となった景観が評価。",
     coords: { lat: 34.296, lng: 132.319 },
   },
   {
@@ -43,8 +41,7 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1993,
-    image:
-      "https://images.unsplash.com/photo-1602510392878-3a7d1e2bb65a?q=80&w=1600&auto=format&fit=crop",
+    image:"https://upload.wikimedia.org/wikipedia/commons/8/87/Himeji_Castle_in_May_2015.jpg",
     short: "保存状態の良い日本の城郭建築。白鷺城の名で親しまれる。",
     coords: { lat: 34.839, lng: 134.693 },
   },
@@ -59,10 +56,8 @@ const SITES = [
     region_en: "Latin America",
     type: "Mixed",
     year: 1983,
-    image:
-      "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1600&auto=format&fit=crop",
-    short:
-      "インカ帝国の歴史的聖地。文化価値と自然景観の双方で顕著な普遍的価値。",
+    image:"https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1600&auto=format&fit=crop",
+    short:"インカ帝国の歴史的聖地。文化価値と自然景観の双方で顕著な普遍的価値。",
     coords: { lat: -13.163, lng: -72.545 },
   },
   {
@@ -76,8 +71,7 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Natural",
     year: 1981,
-    image:
-      "https://images.unsplash.com/photo-1501820488136-72669149e0d4?q=80&w=1600&auto=format&fit=crop",
+    image:"https://images.unsplash.com/photo-1501820488136-72669149e0d4?q=80&w=1600&auto=format&fit=crop",
     short: "世界最大の珊瑚礁生態系。多様な海洋生物の重要な生息地。",
     coords: { lat: -18.287, lng: 147.699 },
   },
@@ -92,10 +86,8 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1987,
-    image:
-      "https://images.unsplash.com/photo-1549897161-4498e07ba4f8?q=80&w=1600&auto=format&fit=crop",
-    short:
-      "古代ギリシア文明を象徴するパルテノン神殿などの遺跡群。",
+    image:"https://images.unsplash.com/photo-1549897161-4498e07ba4f8?q=80&w=1600&auto=format&fit=crop",
+    short:"古代ギリシア文明を象徴するパルテノン神殿などの遺跡群。",
     coords: { lat: 37.9715, lng: 23.7267 },
   },
   {
@@ -109,8 +101,7 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1992,
-    image:
-      "https://images.unsplash.com/photo-1566401762677-2e4b9c1e3b1a?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1566401762677-2e4b9c1e3b1a?q=80&w=1600&auto=format&fit=crop",
     short: "クメール王朝の都。アンコール・ワットなどの遺跡群。",
     coords: { lat: 13.4125, lng: 103.8667 },
   },
@@ -125,10 +116,8 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1994,
-    image:
-      "https://images.unsplash.com/photo-1503467913725-8484b65b0715?q=80&w=1600&auto=format&fit=crop",
-    short:
-      "京都・宇治・大津に点在する神社仏閣や庭園群。日本文化を象徴する景観と建築技術が評価。",
+    image:"https://upload.wikimedia.org/wikipedia/commons/9/9d/Kiyomizu-dera_in_Kyoto.jpg",
+    short: "京都・宇治・大津に点在する神社仏閣や庭園群。日本文化を象徴する景観と建築技術が評価。",
     coords: { lat: 35.0116, lng: 135.7681 },
   },
   {
@@ -142,10 +131,8 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1987,
-    image:
-      "https://images.unsplash.com/photo-1549890762-0a3f8933bcf6?q=80&w=1600&auto=format&fit=crop",
-    short:
-      "中国北部を横断する城壁群。防御施設としての歴史的重要性とスケールが顕著。",
+    image:"https://upload.wikimedia.org/wikipedia/commons/1/10/20090529_Great_Wall_8185.jpg",
+    short:"中国北部を横断する城壁群。防御施設としての歴史的重要性とスケールが壮大。",
     coords: { lat: 40.4319, lng: 116.5704 },
   },
   {
@@ -159,10 +146,8 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1983,
-    image:
-      "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=1600&auto=format&fit=crop",
-    short:
-      "ムガル帝国の皇帝が皇妃のために築いた白大理石の霊廟。完璧な対称性と装飾美。",
+    image:"https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=1600&auto=format&fit=crop",
+    short:"ムガル帝国の皇帝が皇妃のために築いた白大理石の霊廟。完璧な対称性と装飾美。",
     coords: { lat: 27.1751, lng: 78.0421 },
   },
   {
@@ -176,12 +161,195 @@ const SITES = [
     region_en: "North America",
     type: "Natural",
     year: 1978,
-    image:
-      "https://images.unsplash.com/photo-1470074558764-4e57757f6ab7?q=80&w=1600&auto=format&fit=crop",
-    short:
-      "世界初の国立公園。間欠泉や温泉群、豊かな生態系を擁する巨大カルデラ地帯。",
+    image:"https://images.unsplash.com/photo-1470074558764-4e57757f6ab7?q=80&w=1600&auto=format&fit=crop",
+    short:"世界初の国立公園。間欠泉や温泉群、豊かな生態系を擁する巨大カルデラ地帯。",
     coords: { lat: 44.6, lng: -110.5 },
   },
+  // --- ここから追記 ---
+
+  {
+    id: "pyramids-of-giza",
+    slug: "pyramids_of_giza",
+    name_ja: "ギーザのピラミッド群",
+    name_en: "Pyramids of Giza",
+    country_ja: "エジプト",
+    country_en: "Egypt",
+    region_ja: "アフリカ",
+    region_en: "Africa",
+    type: "Cultural",
+    year: 1979,
+    image: "https://source.unsplash.com/featured/?pyramids,egypt",
+    short: "クフ王墓をはじめとする古代エジプト文明の象徴的遺構。",
+    coords: { lat: 29.9792, lng: 31.1342 }
+  },
+  {
+    id: "petra",
+    slug: "petra",
+    name_ja: "ペトラ",
+    name_en: "Petra",
+    country_ja: "ヨルダン",
+    country_en: "Jordan",
+    region_ja: "アラブ諸国",
+    region_en: "Arab States",
+    type: "Cultural",
+    year: 1985,
+    image: "https://source.unsplash.com/featured/?petra,jordan",
+    short: "砂岩を彫り抜いた古代ナバテア王国の都。『宝物殿』が有名。",
+    coords: { lat: 30.3285, lng: 35.4444 }
+  },
+  {
+    id: "colosseum",
+    slug: "colosseum",
+    name_ja: "コロッセオ（ローマ歴史地区）",
+    name_en: "The Colosseum (Historic Centre of Rome)",
+    country_ja: "イタリア",
+    country_en: "Italy",
+    region_ja: "ヨーロッパ",
+    region_en: "Europe",
+    type: "Cultural",
+    year: 1980,
+    image: "https://source.unsplash.com/featured/?colosseum,rome",
+    short: "古代ローマ最大級の円形闘技場。帝国の権勢を物語る建築。",
+    coords: { lat: 41.8902, lng: 12.4922 }
+  },
+  {
+    id: "stonehenge",
+    slug: "stonehenge",
+    name_ja: "ストーンヘンジ（アヴェベリーと関連遺跡群）",
+    name_en: "Stonehenge",
+    country_ja: "イギリス",
+    country_en: "United Kingdom",
+    region_ja: "ヨーロッパ",
+    region_en: "Europe",
+    type: "Cultural",
+    year: 1986,
+    image: "https://source.unsplash.com/featured/?stonehenge",
+    short: "先史時代の環状列石。天文観測との関連が指摘される巨石記念物。",
+    coords: { lat: 51.1789, lng: -1.8262 }
+  },
+  {
+    id: "mont-saint-michel",
+    slug: "mont_saint_michel",
+    name_ja: "モン・サン＝ミシェルとその湾",
+    name_en: "Mont-Saint-Michel and its Bay",
+    country_ja: "フランス",
+    country_en: "France",
+    region_ja: "ヨーロッパ",
+    region_en: "Europe",
+    type: "Cultural",
+    year: 1979,
+    image: "https://source.unsplash.com/featured/?mont%20saint%20michel,france",
+    short: "潮汐により姿を変える小島の修道院。中世巡礼の中心地。",
+    coords: { lat: 48.636, lng: -1.5115 }
+  },
+  {
+    id: "borobudur",
+    slug: "borobudur",
+    name_ja: "ボロブドゥール寺院遺跡群",
+    name_en: "Borobudur Temple Compounds",
+    country_ja: "インドネシア",
+    country_en: "Indonesia",
+    region_ja: "アジア太平洋",
+    region_en: "Asia-Pacific",
+    type: "Cultural",
+    year: 1991,
+    image: "https://source.unsplash.com/featured/?borobudur,indonesia",
+    short: "9世紀建立の大乗仏教寺院。巨大な仏塔とレリーフ群で知られる。",
+    coords: { lat: -7.6079, lng: 110.2038 }
+  },
+  {
+    id: "galapagos",
+    slug: "galapagos_islands",
+    name_ja: "ガラパゴス諸島",
+    name_en: "Galápagos Islands",
+    country_ja: "エクアドル",
+    country_en: "Ecuador",
+    region_ja: "ラテンアメリカ",
+    region_en: "Latin America",
+    type: "Natural",
+    year: 1978,
+    image: "https://source.unsplash.com/featured/?galapagos,islands",
+    short: "固有種が多く進化研究の聖地。海洋保全の最重要地域の一つ。",
+    coords: { lat: -0.9538, lng: -90.9656 }
+  },
+  {
+    id: "serengeti",
+    slug: "serengeti",
+    name_ja: "セレンゲティ国立公園",
+    name_en: "Serengeti National Park",
+    country_ja: "タンザニア",
+    country_en: "Tanzania",
+    region_ja: "アフリカ",
+    region_en: "Africa",
+    type: "Natural",
+    year: 1981,
+    image: "https://source.unsplash.com/featured/?serengeti,africa",
+    short: "ヌー・シマウマの大移動で有名なサバンナ生態系。",
+    coords: { lat: -2.3333, lng: 34.8333 }
+  },
+  {
+    id: "grand-canyon",
+    slug: "grand_canyon",
+    name_ja: "グランド・キャニオン国立公園",
+    name_en: "Grand Canyon National Park",
+    country_ja: "アメリカ合衆国",
+    country_en: "United States of America",
+    region_ja: "北アメリカ",
+    region_en: "North America",
+    type: "Natural",
+    year: 1979,
+    image: "https://source.unsplash.com/featured/?grand%20canyon,arizona",
+    short: "コロラド川の浸食が生んだ巨大渓谷。地球史を物語る地層が露出。",
+    coords: { lat: 36.1069, lng: -112.1129 }
+  },
+  {
+    id: "versailles",
+    slug: "versailles",
+    name_ja: "ヴェルサイユの宮殿と庭園",
+    name_en: "Palace and Park of Versailles",
+    country_ja: "フランス",
+    country_en: "France",
+    region_ja: "ヨーロッパ",
+    region_en: "Europe",
+    type: "Cultural",
+    year: 1979,
+    image: "https://source.unsplash.com/featured/?versailles,palace",
+    short: "絶対王政期の壮麗な宮殿。幾何学庭園はヨーロッパ造園の規範。",
+    coords: { lat: 48.8049, lng: 2.1204 }
+  },
+  {
+    id: "uluru-kata-tjuta",
+    slug: "uluru_kata_tjuta",
+    name_ja: "ウルル＝カタ・ジュタ国立公園",
+    name_en: "Uluru-Kata Tjuta National Park",
+    country_ja: "オーストラリア",
+    country_en: "Australia",
+    region_ja: "アジア太平洋",
+    region_en: "Asia-Pacific",
+    type: "Mixed",
+    year: 1987,
+    image: "https://source.unsplash.com/featured/?uluru,australia",
+    short: "先住民アナングの聖地と特異な地形が共存する景観。",
+    coords: { lat: -25.3444, lng: 131.0369 }
+  },
+  {
+    id: "meteora",
+    slug: "meteora",
+    name_ja: "メテオラの修道院群",
+    name_en: "Meteora",
+    country_ja: "ギリシャ",
+    country_en: "Greece",
+    region_ja: "ヨーロッパ",
+    region_en: "Europe",
+    type: "Cultural",
+    year: 1988,
+    image: "https://source.unsplash.com/featured/?meteora,greece",
+    short: "奇岩の頂に築かれた修道院群。孤絶の信仰空間と絶景で知られる。",
+    coords: { lat: 39.721, lng: 21.6319 }
+  }
+
+  // --- 追記ここまで ---
+
 ];
 
 const TYPES = ["Cultural", "Natural", "Mixed"];
