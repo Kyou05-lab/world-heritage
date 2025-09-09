@@ -1,14 +1,19 @@
+// ← ここを App.jsx の先頭に追加
+import React, { useEffect, useMemo, useState } from "react";
+import { whImages } from "./assets/whImages";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+
+// これより下に Leaflet のマーカー画像対策
 import L from "leaflet";
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
-
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: markerIcon2x,
   iconUrl: markerIcon,
   shadowUrl: markerShadow,
 });
-
 const SITES = [
   {
     id: "itsukushima-shrine",
@@ -599,13 +604,15 @@ export default function App() {
       <Marker key={s.id} position={[s.coords.lat, s.coords.lng]}>
         <Popup>
           <strong>{lang === "ja" ? s.name_ja : s.name_en}</strong><br />
-          {s.country_ja || s.country_en}
+          {lang === "ja" ? s.country_ja : s.country_en}
         </Popup>
       </Marker>
     ))}
   </MapContainer>
 </div>
+ 
 
+</section> 
 
         {/* Grid */}
         <section>
