@@ -61,10 +61,76 @@ export const whImages = {
     license: "CC BY 2.0",
     source: "https://commons.wikimedia.org/wiki/File:Taj_Mahal.jpg",
   },
-  serengeti: {
-    url: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Gnus_connochaetes_taurinus_migrating_-_Serengeti.jpg",
-    author: "Bjørn Christian Tørrissen",
-    license: "CC BY-SA 3.0",
-    source: "https://commons.wikimedia.org/wiki/File:Gnus_connochaetes_taurinus_migrating_-_Serengeti.jpg",
+   // === ここから追記（slug をキーに揃えています） ===
+  pyramids_of_giza: {
+    url: "https://upload.wikimedia.org/wikipedia/commons/e/e3/All_Gizah_Pyramids.jpg",
+    author: "Ricardo Liberato",
+    source: "https://commons.wikimedia.org/wiki/File:All_Gizah_Pyramids.jpg",
+    license: "CC BY-SA 2.0",
   },
+  petra: {
+    url: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Al_Khazneh.jpg",
+    author: "Jerzy Strzelecki",
+    source: "https://commons.wikimedia.org/wiki/File:Al_Khazneh.jpg",
+    license: "CC BY-SA 3.0",
+  },
+  colosseum: {
+    url: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Colosseo_Roma_2008.jpg",
+    author: "Diliff",
+    source: "https://commons.wikimedia.org/wiki/File:Colosseo_Roma_2008.jpg",
+    license: "CC BY-SA 3.0",
+  },
+  stonehenge: {
+    url: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Stonehenge2007_07_30.jpg",
+    author: "Frédéric Vincent",
+    source: "https://commons.wikimedia.org/wiki/File:Stonehenge2007_07_30.jpg",
+    license: "CC BY-SA 2.5",
+  },
+  mont_saint_michel: {
+    url: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Mont_St_Michel_3%2C_Brittany%2C_France_-_July_2011.jpg",
+    author: "Diliff",
+    source: "https://commons.wikimedia.org/wiki/File:Mont_St_Michel_3,_Brittany,_France_-_July_2011.jpg",
+    license: "CC BY-SA 3.0",
+  },
+  borobudur: {
+    url: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Borobudur-Nothwest-view.jpg",
+    author: "Gunawan Kartapranata",
+    source: "https://commons.wikimedia.org/wiki/File:Borobudur-Nothwest-view.jpg",
+    license: "CC BY-SA 3.0",
+  },
+  galapagos_islands: {
+    url: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Marine_Iguana_%28Gal%C3%A1pagos_Islands%29.jpg",
+    author: "Pete Oxford",
+    source: "https://commons.wikimedia.org/wiki/File:Marine_Iguana_(Gal%C3%A1pagos_Islands).jpg",
+    license: "CC BY-SA 3.0",
+  },
+  serengeti: {
+    url: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Migration_mass_of_wildebeest.jpg",
+    author: "Bjørn Christian Tørrissen",
+    source: "https://commons.wikimedia.org/wiki/File:Migration_mass_of_wildebeest.jpg",
+    license: "CC BY-SA 3.0",
+  },
+  grand_canyon: {
+    url: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Grand_Canyon_view_from_Pima_Point_2010.jpg",
+    author: "Chensiyuan",
+    source: "https://commons.wikimedia.org/wiki/File:Grand_Canyon_view_from_Pima_Point_2010.jpg",
+    license: "CC BY-SA 4.0",
+  },
+  versailles: {
+    url: "https://upload.wikimedia.org/wikipedia/commons/7/74/Versailles_-_Ch%C3%A2teau_-_Gardens.jpg",
+    author: "Myrabella",
+    source: "https://commons.wikimedia.org/wiki/File:Versailles_-_Ch%C3%A2teau_-_Gardens.jpg",
+    license: "CC BY-SA 3.0",
+  },
+  uluru_kata_tjuta: {
+    url: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Uluru_2010.jpg",
+    author: "Thomas Schoch",
+    source: "https://commons.wikimedia.org/wiki/File:Uluru_2010.jpg",
+    license: "CC BY-SA 3.0",
+  },
+  meteora: {
+    url:"https://upload.wikimedia.org/wikipedia/commons/1/1e/Holy_Monastery_of_Varama_-_Meteora%2C_Greece.jpg",
+    author: "Pudelek",
+    source: "https://commons.wikimedia.org/wiki/File:Holy_Monastery_of_Varama_-_Meteora,_Greece.jpg",
+    license: "CC BY-SA 3.0",},
 };

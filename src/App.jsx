@@ -193,7 +193,7 @@ const SITES = [
     region_en: "Arab States",
     type: "Cultural",
     year: 1985,
-    image: "https://source.unsplash.com/featured/?petra,jordan",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Petra_Jordan_BW_21.JPG?width=1600",
     short: "砂岩を彫り抜いた古代ナバテア王国の都。『宝物殿』が有名。",
     coords: { lat: 30.3285, lng: 35.4444 }
   },
@@ -208,7 +208,7 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1980,
-    image: "https://source.unsplash.com/featured/?colosseum,rome",
+    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Colosseum_in_Rome,_Italy_-_April_2007.jpg?width=1600",
     short: "古代ローマ最大級の円形闘技場。帝国の権勢を物語る建築。",
     coords: { lat: 41.8902, lng: 12.4922 }
   },
@@ -223,7 +223,7 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1986,
-    image: "https://source.unsplash.com/featured/?stonehenge",
+    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Stonehenge2007_07_30.jpg?width=1600",
     short: "先史時代の環状列石。天文観測との関連が指摘される巨石記念物。",
     coords: { lat: 51.1789, lng: -1.8262 }
   },
@@ -238,7 +238,7 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1979,
-    image: "https://source.unsplash.com/featured/?mont%20saint%20michel,france",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Saint-Michel_vue_generale.jpg?width=1600",
     short: "潮汐により姿を変える小島の修道院。中世巡礼の中心地。",
     coords: { lat: 48.636, lng: -1.5115 }
   },
@@ -253,7 +253,7 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1991,
-    image: "https://source.unsplash.com/featured/?borobudur,indonesia",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur-Nothwest-view.jpg?width=1600",
     short: "9世紀建立の大乗仏教寺院。巨大な仏塔とレリーフ群で知られる。",
     coords: { lat: -7.6079, lng: 110.2038 }
   },
@@ -268,7 +268,7 @@ const SITES = [
     region_en: "Latin America",
     type: "Natural",
     year: 1978,
-    image: "https://source.unsplash.com/featured/?galapagos,islands",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Galapagos_Tortuga.JPG?width=1600",
     short: "固有種が多く進化研究の聖地。海洋保全の最重要地域の一つ。",
     coords: { lat: -0.9538, lng: -90.9656 }
   },
@@ -283,7 +283,7 @@ const SITES = [
     region_en: "Africa",
     type: "Natural",
     year: 1981,
-    image: "https://source.unsplash.com/featured/?serengeti,africa",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti_sunset.jpg?width=1600",
     short: "ヌー・シマウマの大移動で有名なサバンナ生態系。",
     coords: { lat: -2.3333, lng: 34.8333 }
   },
@@ -298,7 +298,7 @@ const SITES = [
     region_en: "North America",
     type: "Natural",
     year: 1979,
-    image: "https://source.unsplash.com/featured/?grand%20canyon,arizona",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Canyon_view_from_Pima_Point_2010.jpg?width=1600",
     short: "コロラド川の浸食が生んだ巨大渓谷。地球史を物語る地層が露出。",
     coords: { lat: 36.1069, lng: -112.1129 }
   },
@@ -313,7 +313,7 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1979,
-    image: "https://source.unsplash.com/featured/?versailles,palace",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_de_Versailles_Galerie_des_Glaces.jpg?width=1600",
     short: "絶対王政期の壮麗な宮殿。幾何学庭園はヨーロッパ造園の規範。",
     coords: { lat: 48.8049, lng: 2.1204 }
   },
@@ -328,7 +328,7 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Mixed",
     year: 1987,
-    image: "https://source.unsplash.com/featured/?uluru,australia",
+    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Uluru_(Helicopter_view).jpg?width=1600",
     short: "先住民アナングの聖地と特異な地形が共存する景観。",
     coords: { lat: -25.3444, lng: 131.0369 }
   },
@@ -343,7 +343,7 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1988,
-    image: "https://source.unsplash.com/featured/?meteora,greece",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Meteora_Monasteries_2010.jpg?width=1600",
     short: "奇岩の頂に築かれた修道院群。孤絶の信仰空間と絶景で知られる。",
     coords: { lat: 39.721, lng: 21.6319 }
   }
