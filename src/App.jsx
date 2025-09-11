@@ -26,7 +26,7 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1996,
-    //image: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Itsukushima_torii_2020.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Itsukushima_torii_2020.jpg",
     short:"海に浮かぶ大鳥居で有名な神社。自然と信仰が一体となった景観が評価。",
     coords: { lat: 34.296, lng: 132.319 },
   },
@@ -41,7 +41,7 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1993,
-    //image:"https://upload.wikimedia.org/wikipedia/commons/8/87/Himeji_Castle_in_May_2015.jpg",
+    image:"https://upload.wikimedia.org/wikipedia/commons/8/87/Himeji_Castle_in_May_2015.jpg",
     short: "保存状態の良い日本の城郭建築。白鷺城の名で親しまれる。",
     coords: { lat: 34.839, lng: 134.693 },
   },
@@ -56,7 +56,7 @@ const SITES = [
     region_en: "Latin America",
     type: "Mixed",
     year: 1983,
-   // image:"https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1600&auto=format&fit=crop",
+   image:"https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1600&auto=format&fit=crop",
     short:"インカ帝国の歴史的聖地。文化価値と自然景観の双方で顕著な普遍的価値。",
     coords: { lat: -13.163, lng: -72.545 },
   },
@@ -116,7 +116,7 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1994,
-   // image:"https://upload.wikimedia.org/wikipedia/commons/9/9d/Kiyomizu-dera_in_Kyoto.jpg",
+    image:"https://upload.wikimedia.org/wikipedia/commons/9/9d/Kiyomizu-dera_in_Kyoto.jpg",
     short: "京都・宇治・大津に点在する神社仏閣や庭園群。日本文化を象徴する景観と建築技術が評価。",
     coords: { lat: 35.0116, lng: 135.7681 },
   },
@@ -131,7 +131,7 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1987,
-   // image:"https://upload.wikimedia.org/wikipedia/commons/1/10/20090529_Great_Wall_8185.jpg",
+   image:"https://upload.wikimedia.org/wikipedia/commons/1/10/20090529_Great_Wall_8185.jpg",
     short:"中国北部を横断する城壁群。防御施設としての歴史的重要性とスケールが壮大。",
     coords: { lat: 40.4319, lng: 116.5704 },
   },
@@ -178,7 +178,7 @@ const SITES = [
     region_en: "Africa",
     type: "Cultural",
     year: 1979,
-   // image: "https://source.unsplash.com/featured/?pyramids,egypt",
+    image: "https://source.unsplash.com/featured/?pyramids,egypt",
     short: "クフ王墓をはじめとする古代エジプト文明の象徴的遺構。",
     coords: { lat: 29.9792, lng: 31.1342 }
   },
@@ -193,7 +193,7 @@ const SITES = [
     region_en: "Arab States",
     type: "Cultural",
     year: 1985,
-    //image: "https://commons.wikimedia.org/wiki/Special:FilePath/Petra_Jordan_BW_21.JPG?width=1600",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Petra_Jordan_BW_21.JPG?width=1600",
     short: "砂岩を彫り抜いた古代ナバテア王国の都。『宝物殿』が有名。",
     coords: { lat: 30.3285, lng: 35.4444 }
   },
@@ -208,7 +208,7 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1980,
-    //image:"https://commons.wikimedia.org/wiki/Special:FilePath/Colosseum_in_Rome,_Italy_-_April_2007.jpg?width=1600",
+    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Colosseum_in_Rome,_Italy_-_April_2007.jpg?width=1600",
     short: "古代ローマ最大級の円形闘技場。帝国の権勢を物語る建築。",
     coords: { lat: 41.8902, lng: 12.4922 }
   },
@@ -238,7 +238,7 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1979,
-    //image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Saint-Michel_vue_generale.jpg?width=1600",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Saint-Michel_vue_generale.jpg?width=1600",
     short: "潮汐により姿を変える小島の修道院。中世巡礼の中心地。",
     coords: { lat: 48.636, lng: -1.5115 }
   },
@@ -253,7 +253,7 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1991,
-   // image: "https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur-Nothwest-view.jpg?width=1600",
+   image: "https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur-Nothwest-view.jpg?width=1600",
     short: "9世紀建立の大乗仏教寺院。巨大な仏塔とレリーフ群で知られる。",
     coords: { lat: -7.6079, lng: 110.2038 }
   },
@@ -268,7 +268,7 @@ const SITES = [
     region_en: "Latin America",
     type: "Natural",
     year: 1978,
-   // image: "https://commons.wikimedia.org/wiki/Special:FilePath/Galapagos_Tortuga.JPG?width=1600",
+   image: "https://commons.wikimedia.org/wiki/Special:FilePath/Galapagos_Tortuga.JPG?width=1600",
     short: "固有種が多く進化研究の聖地。海洋保全の最重要地域の一つ。",
     coords: { lat: -0.9538, lng: -90.9656 }
   },
@@ -283,7 +283,7 @@ const SITES = [
     region_en: "Africa",
     type: "Natural",
     year: 1981,
-   // image: "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti_sunset.jpg?width=1600",
+   image: "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti_sunset.jpg?width=1600",
     short: "ヌー・シマウマの大移動で有名なサバンナ生態系。",
     coords: { lat: -2.3333, lng: 34.8333 }
   },
@@ -298,7 +298,7 @@ const SITES = [
     region_en: "North America",
     type: "Natural",
     year: 1979,
-    //image: "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Canyon_view_from_Pima_Point_2010.jpg?width=1600",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Canyon_view_from_Pima_Point_2010.jpg?width=1600",
     short: "コロラド川の浸食が生んだ巨大渓谷。地球史を物語る地層が露出。",
     coords: { lat: 36.1069, lng: -112.1129 }
   },
@@ -313,7 +313,7 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1979,
-   // image: "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_de_Versailles_Galerie_des_Glaces.jpg?width=1600",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_de_Versailles_Galerie_des_Glaces.jpg?width=1600",
     short: "絶対王政期の壮麗な宮殿。幾何学庭園はヨーロッパ造園の規範。",
     coords: { lat: 48.8049, lng: 2.1204 }
   },
@@ -328,7 +328,7 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Mixed",
     year: 1987,
-    //image:"https://commons.wikimedia.org/wiki/Special:FilePath/Uluru_(Helicopter_view).jpg?width=1600",
+    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Uluru_(Helicopter_view).jpg?width=1600",
     short: "先住民アナングの聖地と特異な地形が共存する景観。",
     coords: { lat: -25.3444, lng: 131.0369 }
   },
@@ -343,7 +343,7 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1988,
-   // image: "https://commons.wikimedia.org/wiki/Special:FilePath/Meteora_Monasteries_2010.jpg?width=1600",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Meteora_Monasteries_2010.jpg?width=1600",
     short: "奇岩の頂に築かれた修道院群。孤絶の信仰空間と絶景で知られる。",
     coords: { lat: 39.721, lng: 21.6319 }
   }
@@ -384,7 +384,7 @@ function Credit({ img }) {
 ================================ */
 function SiteCard({ site, onOpen, onToggleFav, fav, lang }) {
   const img = whImages[site.slug];
-  const src = img?.url || site.image;
+  const src = img?.url || site.image || "/placeholder.jpg";  // ← フォールバック追加
   const title =
     (lang === "ja" ? site.name_ja : site.name_en) ||
     site.name_en ||
@@ -396,15 +396,13 @@ function SiteCard({ site, onOpen, onToggleFav, fav, lang }) {
     <article className="group relative overflow-hidden rounded-2xl border border-slate-200/30 bg-white/70 shadow-sm backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl dark:border-white/10 dark:bg-slate-900/60">
       {/* アニメ化するための画像ラッパ */}
       <div className="overflow-hidden">
-        {src && (
-          <img
-            src={src}
-            alt={title}
-            loading="lazy"
-            className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-            onError={(e) => (e.currentTarget.style.display = "none")}
-          />
-        )}
+         <img
+        src={src}
+          alt={title}
+          loading="lazy"
+          className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+       onError={(e) => { e.currentTarget.src = "/placeholder.jpg"; }}
+        />
       </div>
 
       {/* タイプバッジ（右上） */}
@@ -480,7 +478,7 @@ function Detail({ site, onClose, lang }) {
   if (!site) return null;
 
   const img = site?.slug ? whImages[site.slug] : null;
-  const src = img?.url || site.image;
+  const src = img?.url || site.image || "/placeholder.jpg";
   const title =
     (lang === "ja" ? site.name_ja : site.name_en) ||
     site.name_en ||
@@ -492,7 +490,12 @@ function Detail({ site, onClose, lang }) {
     <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
       <div className="absolute inset-0 bg-slate-900/60" onClick={onClose} />
       <div className="relative m-2 w-full max-w-3xl overflow-hidden rounded-2xl bg-white shadow-2xl dark:bg-slate-900">
-        {src && <img src={src} alt="" className="h-60 w-full object-cover" />}
+      <img
+          src={src}
+          alt=""
+          className="h-60 w-full object-cover"
+          onError={(e) => { e.currentTarget.src = "/placeholder.jpg"; }}
+        />
         <div className="p-5">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h3 className="text-xl font-bold text-slate-900 dark:text-white">
