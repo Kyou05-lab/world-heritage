@@ -328,7 +328,8 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Mixed",
     year: 1987,
-    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Uluru_(Helicopter_view).jpg?width=1600",
+    image:"https://upload.wikimedia.org/wikipedia/commons/c/c2/Uluru%2C_helicopter_view%2C_cropped.jpg",
+
     short: "先住民アナングの聖地と特異な地形が共存する景観。",
     coords: { lat: -25.3444, lng: 131.0369 }
   },
