@@ -14,6 +14,7 @@ L.Icon.Default.mergeOptions({
   iconUrl: markerIcon,
   shadowUrl: markerShadow,
 });
+
 const SITES = [
   {
     id: "itsukushima-shrine",
@@ -27,7 +28,7 @@ const SITES = [
     type: "Cultural",
     year: 1996,
     image: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Itsukushima_torii_2020.jpg",
-    short:"海に浮かぶ大鳥居で有名な神社。自然と信仰が一体となった景観が評価。",
+    short: "海に浮かぶ大鳥居で有名な神社。自然と信仰が一体となった景観が評価。",
     coords: { lat: 34.296, lng: 132.319 },
   },
   {
@@ -41,7 +42,7 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1993,
-    image:"https://upload.wikimedia.org/wikipedia/commons/8/87/Himeji_Castle_in_May_2015.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/87/Himeji_Castle_in_May_2015.jpg",
     short: "保存状態の良い日本の城郭建築。白鷺城の名で親しまれる。",
     coords: { lat: 34.839, lng: 134.693 },
   },
@@ -56,8 +57,10 @@ const SITES = [
     region_en: "Latin America",
     type: "Mixed",
     year: 1983,
-   image:"https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1600&auto=format&fit=crop",
-    short:"インカ帝国の歴史的聖地。文化価値と自然景観の双方で顕著な普遍的価値。",
+    image:
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1600&auto=format&fit=crop",
+    short:
+      "インカ帝国の歴史的聖地。文化価値と自然景観の双方で顕著な普遍的価値。",
     coords: { lat: -13.163, lng: -72.545 },
   },
   {
@@ -71,8 +74,10 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Natural",
     year: 1981,
-    image:"https://images.unsplash.com/photo-1501820488136-72669149e0d4?q=80&w=1600&auto=format&fit=crop",
-    short: "世界最大の珊瑚礁生態系。多様な海洋生物の重要な生息地。",
+    image:
+      "https://images.unsplash.com/photo-1501820488136-72669149e0d4?q=80&w=1600&auto=format&fit=crop",
+    short:
+      "世界最大の珊瑚礁生態系。多様な海洋生物の重要な生息地。",
     coords: { lat: -18.287, lng: 147.699 },
   },
   {
@@ -86,8 +91,9 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1987,
-    image:"https://images.unsplash.com/photo-1549897161-4498e07ba4f8?q=80&w=1600&auto=format&fit=crop",
-    short:"古代ギリシア文明を象徴するパルテノン神殿などの遺跡群。",
+    image:
+      "https://images.unsplash.com/photo-1549897161-4498e07ba4f8?q=80&w=1600&auto=format&fit=crop",
+    short: "古代ギリシア文明を象徴するパルテノン神殿などの遺跡群。",
     coords: { lat: 37.9715, lng: 23.7267 },
   },
   {
@@ -101,7 +107,8 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1992,
-    image: "https://images.unsplash.com/photo-1566401762677-2e4b9c1e3b1a?q=80&w=1600&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1566401762677-2e4b9c1e3b1a?q=80&w=1600&auto=format&fit=crop",
     short: "クメール王朝の都。アンコール・ワットなどの遺跡群。",
     coords: { lat: 13.4125, lng: 103.8667 },
   },
@@ -116,8 +123,10 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1994,
-    image:"https://upload.wikimedia.org/wikipedia/commons/9/9d/Kiyomizu-dera_in_Kyoto.jpg",
-    short: "京都・宇治・大津に点在する神社仏閣や庭園群。日本文化を象徴する景観と建築技術が評価。",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/9/9d/Kiyomizu-dera_in_Kyoto.jpg",
+    short:
+      "京都・宇治・大津に点在する神社仏閣や庭園群。日本文化を象徴する景観と建築技術が評価。",
     coords: { lat: 35.0116, lng: 135.7681 },
   },
   {
@@ -131,8 +140,10 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1987,
-   image:"https://upload.wikimedia.org/wikipedia/commons/1/10/20090529_Great_Wall_8185.jpg",
-    short:"中国北部を横断する城壁群。防御施設としての歴史的重要性とスケールが壮大。",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/1/10/20090529_Great_Wall_8185.jpg",
+    short:
+      "中国北部を横断する城壁群。防御施設としての歴史的重要性とスケールが壮大。",
     coords: { lat: 40.4319, lng: 116.5704 },
   },
   {
@@ -146,8 +157,10 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1983,
-    image:"https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=1600&auto=format&fit=crop",
-    short:"ムガル帝国の皇帝が皇妃のために築いた白大理石の霊廟。完璧な対称性と装飾美。",
+    image:
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=1600&auto=format&fit=crop",
+    short:
+      "ムガル帝国の皇帝が皇妃のために築いた白大理石の霊廟。完璧な対称性と装飾美。",
     coords: { lat: 27.1751, lng: 78.0421 },
   },
   {
@@ -161,12 +174,14 @@ const SITES = [
     region_en: "North America",
     type: "Natural",
     year: 1978,
-    image:"https://images.unsplash.com/photo-1470074558764-4e57757f6ab7?q=80&w=1600&auto=format&fit=crop",
-    short:"世界初の国立公園。間欠泉や温泉群、豊かな生態系を擁する巨大カルデラ地帯。",
+    image:
+      "https://images.unsplash.com/photo-1470074558764-4e57757f6ab7?q=80&w=1600&auto=format&fit=crop",
+    short:
+      "世界初の国立公園。間欠泉や温泉群、豊かな生態系を擁する巨大カルデラ地帯。",
     coords: { lat: 44.6, lng: -110.5 },
   },
-  // --- ここから追記 ---
 
+  // --- ここから追記 ---
   {
     id: "pyramids-of-giza",
     slug: "pyramids_of_giza",
@@ -178,9 +193,11 @@ const SITES = [
     region_en: "Africa",
     type: "Cultural",
     year: 1979,
-    image: "https://source.unsplash.com/featured/?pyramids,egypt",
+    // source.unsplash.com はブロックされやすいので固定写真に変更
+    image:
+      "https://images.unsplash.com/photo-1580657018950-20b2cbd3683d?auto=format&fit=crop&w=1600&q=80",
     short: "クフ王墓をはじめとする古代エジプト文明の象徴的遺構。",
-    coords: { lat: 29.9792, lng: 31.1342 }
+    coords: { lat: 29.9792, lng: 31.1342 },
   },
   {
     id: "petra",
@@ -193,9 +210,11 @@ const SITES = [
     region_en: "Arab States",
     type: "Cultural",
     year: 1985,
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Petra_Jordan_BW_21.JPG?width=1600",
-    short: "砂岩を彫り抜いた古代ナバテア王国の都。『宝物殿』が有名。",
-    coords: { lat: 30.3285, lng: 35.4444 }
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Petra_Jordan_BW_21.JPG?width=1600",
+    short:
+      "砂岩を彫り抜いた古代ナバテア王国の都。『宝物殿』が有名。",
+    coords: { lat: 30.3285, lng: 35.4444 },
   },
   {
     id: "colosseum",
@@ -208,9 +227,11 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1980,
-    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Colosseum_in_Rome,_Italy_-_April_2007.jpg?width=1600",
-    short: "古代ローマ最大級の円形闘技場。帝国の権勢を物語る建築。",
-    coords: { lat: 41.8902, lng: 12.4922 }
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Colosseum_in_Rome,_Italy_-_April_2007.jpg?width=1600",
+    short:
+      "古代ローマ最大級の円形闘技場。帝国の権勢を物語る建築。",
+    coords: { lat: 41.8902, lng: 12.4922 },
   },
   {
     id: "stonehenge",
@@ -223,9 +244,11 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1986,
-    image:"https://commons.wikimedia.org/wiki/Special:FilePath/Stonehenge2007_07_30.jpg?width=1600",
-    short: "先史時代の環状列石。天文観測との関連が指摘される巨石記念物。",
-    coords: { lat: 51.1789, lng: -1.8262 }
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Stonehenge2007_07_30.jpg?width=1600",
+    short:
+      "先史時代の環状列石。天文観測との関連が指摘される巨石記念物。",
+    coords: { lat: 51.1789, lng: -1.8262 },
   },
   {
     id: "mont-saint-michel",
@@ -238,9 +261,11 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1979,
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Saint-Michel_vue_generale.jpg?width=1600",
-    short: "潮汐により姿を変える小島の修道院。中世巡礼の中心地。",
-    coords: { lat: 48.636, lng: -1.5115 }
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Saint-Michel_vue_generale.jpg?width=1600",
+    short:
+      "潮汐により姿を変える小島の修道院。中世巡礼の中心地。",
+    coords: { lat: 48.636, lng: -1.5115 },
   },
   {
     id: "borobudur",
@@ -253,9 +278,11 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Cultural",
     year: 1991,
-   image: "https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur-Nothwest-view.jpg?width=1600",
-    short: "9世紀建立の大乗仏教寺院。巨大な仏塔とレリーフ群で知られる。",
-    coords: { lat: -7.6079, lng: 110.2038 }
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Borobudur-Nothwest-view.jpg?width=1600",
+    short:
+      "9世紀建立の大乗仏教寺院。巨大な仏塔とレリーフ群で知られる。",
+    coords: { lat: -7.6079, lng: 110.2038 },
   },
   {
     id: "galapagos",
@@ -268,9 +295,11 @@ const SITES = [
     region_en: "Latin America",
     type: "Natural",
     year: 1978,
-   image: "https://commons.wikimedia.org/wiki/Special:FilePath/Galapagos_Tortuga.JPG?width=1600",
-    short: "固有種が多く進化研究の聖地。海洋保全の最重要地域の一つ。",
-    coords: { lat: -0.9538, lng: -90.9656 }
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Galapagos_Tortuga.JPG?width=1600",
+    short:
+      "固有種が多く進化研究の聖地。海洋保全の最重要地域の一つ。",
+    coords: { lat: -0.9538, lng: -90.9656 },
   },
   {
     id: "serengeti",
@@ -283,9 +312,11 @@ const SITES = [
     region_en: "Africa",
     type: "Natural",
     year: 1981,
-   image: "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti_sunset.jpg?width=1600",
-    short: "ヌー・シマウマの大移動で有名なサバンナ生態系。",
-    coords: { lat: -2.3333, lng: 34.8333 }
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti_sunset.jpg?width=1600",
+    short:
+      "ヌー・シマウマの大移動で有名なサバンナ生態系。",
+    coords: { lat: -2.3333, lng: 34.8333 },
   },
   {
     id: "grand-canyon",
@@ -298,9 +329,11 @@ const SITES = [
     region_en: "North America",
     type: "Natural",
     year: 1979,
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Canyon_view_from_Pima_Point_2010.jpg?width=1600",
-    short: "コロラド川の浸食が生んだ巨大渓谷。地球史を物語る地層が露出。",
-    coords: { lat: 36.1069, lng: -112.1129 }
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Canyon_view_from_Pima_Point_2010.jpg?width=1600",
+    short:
+      "コロラド川の浸食が生んだ巨大渓谷。地球史を物語る地層が露出。",
+    coords: { lat: 36.1069, lng: -112.1129 },
   },
   {
     id: "versailles",
@@ -313,9 +346,11 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1979,
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_de_Versailles_Galerie_des_Glaces.jpg?width=1600",
-    short: "絶対王政期の壮麗な宮殿。幾何学庭園はヨーロッパ造園の規範。",
-    coords: { lat: 48.8049, lng: 2.1204 }
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Chateau_de_Versailles_Galerie_des_Glaces.jpg?width=1600",
+    short:
+      "絶対王政期の壮麗な宮殿。幾何学庭園はヨーロッパ造園の規範。",
+    coords: { lat: 48.8049, lng: 2.1204 },
   },
   {
     id: "uluru-kata-tjuta",
@@ -328,10 +363,11 @@ const SITES = [
     region_en: "Asia-Pacific",
     type: "Mixed",
     year: 1987,
-    image:"https://upload.wikimedia.org/wikipedia/commons/c/c2/Uluru%2C_helicopter_view%2C_cropped.jpg",
-
-    short: "先住民アナングの聖地と特異な地形が共存する景観。",
-    coords: { lat: -25.3444, lng: 131.0369 }
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c2/Uluru%2C_helicopter_view%2C_cropped.jpg",
+    short:
+      "先住民アナングの聖地と特異な地形が共存する景観。",
+    coords: { lat: -25.3444, lng: 131.0369 },
   },
   {
     id: "meteora",
@@ -344,13 +380,13 @@ const SITES = [
     region_en: "Europe",
     type: "Cultural",
     year: 1988,
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Meteora_Monasteries_2010.jpg?width=1600",
-    short: "奇岩の頂に築かれた修道院群。孤絶の信仰空間と絶景で知られる。",
-    coords: { lat: 39.721, lng: 21.6319 }
-  }
-
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Meteora_Monasteries_2010.jpg?width=1600",
+    short:
+      "奇岩の頂に築かれた修道院群。孤絶の信仰空間と絶景で知られる。",
+    coords: { lat: 39.721, lng: 21.6319 },
+  },
   // --- 追記ここまで ---
-
 ];
 
 const TYPES = ["Cultural", "Natural", "Mixed"];
@@ -360,6 +396,30 @@ const TYPES = ["Cultural", "Natural", "Mixed"];
 ================================ */
 function classNames(...xs) {
   return xs.filter(Boolean).join(" ");
+}
+
+// 画像URLを安全な形に正規化
+function safeImageUrl(raw, title = "world heritage") {
+  if (!raw) return null;
+
+  // 1) source.unsplash.com → ブロック回避のため固定の images.unsplash.com に差し替えたいが
+  //   データ側で置き換え済み。念のため保険。
+  if (raw.includes("source.unsplash.com")) {
+    return "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80";
+  }
+
+  // 2) Wikimedia の Special:FilePath はリダイレクトで失敗しやすい → 画像プロキシ経由
+  if (raw.includes("commons.wikimedia.org/wiki/Special:FilePath/")) {
+    const noScheme = raw.replace(/^https?:\/\//, "");
+    return `https://images.weserv.nl/?url=${encodeURIComponent(noScheme)}`;
+  }
+
+  return raw;
+}
+
+// タイトル由来の第2フォールバック（Unsplashが使えない環境向けに picsum へ）
+function keywordFallback(title = "world heritage") {
+  return `https://picsum.photos/seed/${encodeURIComponent(title)}/1200/630`;
 }
 
 function Credit({ img }) {
@@ -384,25 +444,49 @@ function Credit({ img }) {
    Card
 ================================ */
 function SiteCard({ site, onOpen, onToggleFav, fav, lang }) {
-  const img = whImages[site.slug];
-  const src = img?.url || site.image || "/placeholder.jpg";  // ← フォールバック追加
   const title =
-    (lang === "ja" ? site.name_ja : site.name_en) ||
-    site.name_en ||
-    site.name_ja;
+    (lang === "ja" ? site.name_ja : site.name_en) || site.name_en || site.name_ja;
+  const img = whImages[site.slug];
+  const primary = safeImageUrl(img?.url || site.image, title);
+
   const countryLabel = lang === "ja" ? site.country_ja : site.country_en;
   const regionLabel = lang === "ja" ? site.region_ja : site.region_en;
+
+  // 埋め込みSVG（最終フォールバック）
+  const EMBED_PLACEHOLDER =
+    "data:image/svg+xml;charset=UTF-8," +
+    encodeURIComponent(
+      `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'>
+        <rect width='100%' height='100%' fill='#e5e7eb'/>
+        <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle'
+          font-family='system-ui, -apple-system, Segoe UI, Roboto' font-size='28' fill='#6b7280'>
+          Image unavailable
+        </text>
+      </svg>`
+    );
+
+  // 表示ソースの状態（primary → picsum → 埋め込み）
+  const [src, setSrc] = React.useState(primary || keywordFallback(title));
 
   return (
     <article className="group relative overflow-hidden rounded-2xl border border-slate-200/30 bg-white/70 shadow-sm backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl dark:border-white/10 dark:bg-slate-900/60">
       {/* アニメ化するための画像ラッパ */}
       <div className="overflow-hidden">
-         <img
-        src={src}
+        <img
+          src={src}
           alt={title}
           loading="lazy"
           className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-       onError={(e) => { e.currentTarget.src = "/placeholder.jpg"; }}
+          referrerPolicy="no-referrer"
+          crossOrigin="anonymous"
+          onError={(e) => {
+            if (!e.currentTarget.dataset.fallback) {
+              e.currentTarget.dataset.fallback = "picsum";
+              setSrc(keywordFallback(title));
+              return;
+            }
+            setSrc(EMBED_PLACEHOLDER);
+          }}
         />
       </div>
 
@@ -448,8 +532,14 @@ function SiteCard({ site, onOpen, onToggleFav, fav, lang }) {
           >
             {/* link icon */}
             <svg width="16" height="16" viewBox="0 0 24 24" className="-ml-0.5">
-              <path fill="currentColor" d="M10.59 13.41a1 1 0 0 1 0-1.41l2-2a1 1 0 1 1 1.41 1.41l-2 2a1 1 0 0 1-1.41 0Z"/>
-              <path fill="currentColor" d="M13.54 7.05a3.5 3.5 0 0 1 4.95 4.95l-2.12 2.12a3.5 3.5 0 0 1-4.95 0a1 1 0 1 1 1.41-1.41a1.5 1.5 0 0 0 2.12 0l2.12-2.12a1.5 1.5 0 0 0-2.12-2.12a1 1 0 0 1-1.41-1.41Zm-8.02 8.02l2.12-2.12a3.5 3.5 0 0 1 4.95 0a1 1 0 0 1-1.41 1.41a1.5 1.5 0 0 0-2.12 0l-2.12 2.12a1.5 1.5 0 0 0 2.12 2.12a1 1 0 1 1 1.41 1.41a3.5 3.5 0 0 1-4.95-4.95Z"/>
+              <path
+                fill="currentColor"
+                d="M10.59 13.41a1 1 0 0 1 0-1.41l2-2a1 1 0 1 1 1.41 1.41l-2 2a1 1 0 0 1-1.41 0Z"
+              />
+              <path
+                fill="currentColor"
+                d="M13.54 7.05a3.5 3.5 0 0 1 4.95 4.95l-2.12 2.12a3.5 3.5 0 0 1-4.95 0a1 1 0 1 1 1.41-1.41a1.5 1.5 0 0 0 2.12 0l2.12-2.12a1.5 1.5 0 0 0-2.12-2.12a1 1 0 0 1-1.41-1.41Zm-8.02 8.02l2.12-2.12a3.5 3.5 0 0 1 4.95 0a1 1 0 0 1-1.41 1.41a1.5 1.5 0 0 0-2.12 0l-2.12 2.12a1.5 1.5 0 0 0 2.12 2.12a1 1 0 1 1 1.41 1.41a3.5 3.5 0 0 1-4.95-4.95Z"
+              />
             </svg>
             Learn more
           </button>
@@ -478,24 +568,46 @@ function SiteCard({ site, onOpen, onToggleFav, fav, lang }) {
 function Detail({ site, onClose, lang }) {
   if (!site) return null;
 
-  const img = site?.slug ? whImages[site.slug] : null;
-  const src = img?.url || site.image || "/placeholder.jpg";
   const title =
-    (lang === "ja" ? site.name_ja : site.name_en) ||
-    site.name_en ||
-    site.name_ja;
+    (lang === "ja" ? site.name_ja : site.name_en) || site.name_en || site.name_ja;
+  const img = site?.slug ? whImages[site.slug] : null;
+  const primary = safeImageUrl(img?.url || site.image, title);
+
   const countryLabel = lang === "ja" ? site.country_ja : site.country_en;
   const regionLabel = lang === "ja" ? site.region_ja : site.region_en;
+
+  const EMBED_PLACEHOLDER =
+    "data:image/svg+xml;charset=UTF-8," +
+    encodeURIComponent(
+      `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'>
+        <rect width='100%' height='100%' fill='#e5e7eb'/>
+        <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle'
+          font-family='system-ui, -apple-system, Segoe UI, Roboto' font-size='28' fill='#6b7280'>
+          Image unavailable
+        </text>
+      </svg>`
+    );
+
+  const [src, setSrc] = React.useState(primary || keywordFallback(title));
 
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
       <div className="absolute inset-0 bg-slate-900/60" onClick={onClose} />
       <div className="relative m-2 w-full max-w-3xl overflow-hidden rounded-2xl bg-white shadow-2xl dark:bg-slate-900">
-      <img
+        <img
           src={src}
-          alt=""
+          alt={title}
           className="h-60 w-full object-cover"
-          onError={(e) => { e.currentTarget.src = "/placeholder.jpg"; }}
+          referrerPolicy="no-referrer"
+          crossOrigin="anonymous"
+          onError={(e) => {
+            if (!e.currentTarget.dataset.fallback) {
+              e.currentTarget.dataset.fallback = "picsum";
+              setSrc(keywordFallback(title));
+              return;
+            }
+            setSrc(EMBED_PLACEHOLDER);
+          }}
         />
         <div className="p-5">
           <div className="flex flex-wrap items-center justify-between gap-2">
@@ -603,8 +715,7 @@ export default function App() {
     list = list.sort((a, b) => {
       if (sort === "name") return getName(a).localeCompare(getName(b));
       if (sort === "year") return a.year - b.year;
-      if (sort === "country")
-        return getCountry(a).localeCompare(getCountry(b));
+      if (sort === "country") return getCountry(a).localeCompare(getCountry(b));
       return 0;
     });
     return list;
@@ -634,7 +745,7 @@ export default function App() {
         {/* Header（ガラス＋シャドウ＋スイッチ） */}
         <div className="sticky top-0 z-40 -mx-5 mb-5 border-b border-slate-200/60 bg-white/60 backdrop-blur-md shadow-sm dark:border-white/10 dark:bg-slate-900/40">
           <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3">
-            <div className="flex items-center gap-2">
+            <div className="flex items中心 gap-2">
               <div className="h-3 w-3 rounded-full bg-gradient-to-tr from-sky-400 to-cyan-300 ring-4 ring-cyan-200/30 dark:ring-cyan-400/20" />
               <span className="text-sm font-bold tracking-wide">
                 World Heritage Explorer
@@ -646,7 +757,9 @@ export default function App() {
                 href="#favorites"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById("favorites")?.scrollIntoView({ behavior: "smooth" });
+                  document
+                    .getElementById("favorites")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 Favorites ({favs.length})
@@ -684,7 +797,10 @@ export default function App() {
               Curate & learn about UNESCO World Heritage Sites
             </p>
             <h1 className="text-2xl font-black leading-tight sm:text-4xl">
-              世界遺産紹介サイト <span className="bg-gradient-to-r from-sky-500 to-cyan-500 bg-clip-text text-transparent">(Demo)</span>
+              世界遺産紹介サイト{" "}
+              <span className="bg-gradient-to-r from-sky-500 to-cyan-500 bg-clip-text text-transparent">
+                (Demo)
+              </span>
             </h1>
             <p className="mt-3 text-slate-600 dark:text-slate-300">
               検索 / 絞り込み / 並び替え / お気に入り保存（ローカル）に対応。カードをクリックして詳細を表示。データは下の配列{" "}
@@ -760,31 +876,30 @@ export default function App() {
             </div>
           </div>
 
-         {/* Map セクション */}
-<div className="rounded-3xl border border-slate-200/60 bg-white/80 shadow-sm dark:border-white/10 dark:bg-slate-900/50">
-  <MapContainer
-    center={[20, 0]}      // 初期表示（世界地図っぽく）
-    zoom={2}
-    style={{ height: "400px", width: "100%" }}
-    scrollWheelZoom={false}
-  >
-    <TileLayer
-      attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
-    {filtered.map((s) => (
-      <Marker key={s.id} position={[s.coords.lat, s.coords.lng]}>
-        <Popup>
-          <strong>{lang === "ja" ? s.name_ja : s.name_en}</strong><br />
-          {lang === "ja" ? s.country_ja : s.country_en}
-        </Popup>
-      </Marker>
-    ))}
-  </MapContainer>
-</div>
- 
-
-</section> 
+          {/* Map セクション */}
+          <div className="rounded-3xl border border-slate-200/60 bg-white/80 shadow-sm dark:border-white/10 dark:bg-slate-900/50">
+            <MapContainer
+              center={[20, 0]} // 初期表示（世界地図っぽく）
+              zoom={2}
+              style={{ height: "400px", width: "100%" }}
+              scrollWheelZoom={false}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              {filtered.map((s) => (
+                <Marker key={s.id} position={[s.coords.lat, s.coords.lng]}>
+                  <Popup>
+                    <strong>{lang === "ja" ? s.name_ja : s.name_en}</strong>
+                    <br />
+                    {lang === "ja" ? s.country_ja : s.country_en}
+                  </Popup>
+                </Marker>
+              ))}
+            </MapContainer>
+          </div>
+        </section>
 
         {/* Grid */}
         <section>
