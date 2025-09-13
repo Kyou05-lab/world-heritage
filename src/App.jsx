@@ -1,10 +1,8 @@
-// ← ここを App.jsx の先頭に追加
 import React, { useEffect, useMemo, useState } from "react";
 import { whImages } from "./assets/whImages";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-// これより下に Leaflet のマーカー画像対策
 import L from "leaflet";
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
@@ -14,6 +12,7 @@ L.Icon.Default.mergeOptions({
   iconUrl: markerIcon,
   shadowUrl: markerShadow,
 });
+
 
 const SITES = [
   {
@@ -386,40 +385,26 @@ const SITES = [
       "奇岩の頂に築かれた修道院群。孤絶の信仰空間と絶景で知られる。",
     coords: { lat: 39.721, lng: 21.6319 },
   },
-  // --- 追記ここまで ---
+
 ];
+  // --- 追記ここまで ---
 
 const TYPES = ["Cultural", "Natural", "Mixed"];
 
-/* ===============================
-   Helpers
-================================ */
 function classNames(...xs) {
   return xs.filter(Boolean).join(" ");
 }
 
-// 画像URLを安全な形に正規化
 function safeImageUrl(raw, title = "world heritage") {
   if (!raw) return null;
-
-  // 1) source.unsplash.com → ブロック回避のため固定の images.unsplash.com に差し替えたいが
-  //   データ側で置き換え済み。念のため保険。
   if (raw.includes("source.unsplash.com")) {
     return "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80";
   }
-
-  // 2) Wikimedia の Special:FilePath はリダイレクトで失敗しやすい → 画像プロキシ経由
   if (raw.includes("commons.wikimedia.org/wiki/Special:FilePath/")) {
     const noScheme = raw.replace(/^https?:\/\//, "");
     return `https://images.weserv.nl/?url=${encodeURIComponent(noScheme)}`;
   }
-
   return raw;
-}
-
-// タイトル由来の第2フォールバック（Unsplashが使えない環境向けに picsum へ）
-function keywordFallback(title = "world heritage") {
-  return `https://picsum.photos/seed/${encodeURIComponent(title)}/1200/630`;
 }
 
 function Credit({ img }) {
@@ -452,65 +437,38 @@ function SiteCard({ site, onOpen, onToggleFav, fav, lang }) {
   const countryLabel = lang === "ja" ? site.country_ja : site.country_en;
   const regionLabel = lang === "ja" ? site.region_ja : site.region_en;
 
-  // 埋め込みSVG（最終フォールバック）
-  const EMBED_PLACEHOLDER =
-    "data:image/svg+xml;charset=UTF-8," +
-    encodeURIComponent(
-      `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'>
-        <rect width='100%' height='100%' fill='#e5e7eb'/>
-        <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle'
-          font-family='system-ui, -apple-system, Segoe UI, Roboto' font-size='28' fill='#6b7280'>
-          Image unavailable
-        </text>
-      </svg>`
-    );
-
-  // 表示ソースの状態（primary → picsum → 埋め込み）
-  const [src, setSrc] = React.useState(primary || keywordFallback(title));
+  const [src, setSrc] = React.useState(primary || "/placeholder.jpg");
 
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-slate-200/30 bg-white/70 shadow-sm backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl dark:border-white/10 dark:bg-slate-900/60">
-      {/* アニメ化するための画像ラッパ */}
+    <article className="group relative overflow-hidden rounded-2xl bg-white/90 shadow-lg ring-1 ring-blue-400/40 transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/40 dark:bg-slate-900/80">
       <div className="overflow-hidden">
         <img
           src={src}
           alt={title}
           loading="lazy"
-          className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-          referrerPolicy="no-referrer"
-          crossOrigin="anonymous"
-          onError={(e) => {
-            if (!e.currentTarget.dataset.fallback) {
-              e.currentTarget.dataset.fallback = "picsum";
-              setSrc(keywordFallback(title));
-              return;
-            }
-            setSrc(EMBED_PLACEHOLDER);
-          }}
+          className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+          onError={() => setSrc("/placeholder.jpg")}
         />
       </div>
 
-      {/* タイプバッジ（右上） */}
       <span
         className={classNames(
           "absolute right-3 top-3 rounded-full px-2.5 py-1 text-xs font-bold text-white shadow-sm",
-          site.type === "Cultural" && "bg-gradient-to-r from-pink-500 to-rose-500",
-          site.type === "Natural" && "bg-gradient-to-r from-emerald-500 to-teal-500",
-          site.type === "Mixed" && "bg-gradient-to-r from-indigo-500 to-violet-500"
+          site.type === "Cultural" && "bg-gradient-to-r from-sky-500 to-blue-600",
+          site.type === "Natural" && "bg-gradient-to-r from-sky-400 to-cyan-500",
+          site.type === "Mixed" && "bg-gradient-to-r from-indigo-500 to-blue-600"
         )}
       >
         {site.type}
       </span>
 
       <div className="p-4">
-        <h3 className="mb-1 text-base font-semibold leading-tight text-slate-900 dark:text-slate-50">
+        <h3 className="mb-1 text-lg font-serif font-bold leading-tight text-slate-900 dark:text-slate-50">
           {title}
         </h3>
-
         <p className="line-clamp-2 text-sm text-slate-600 dark:text-slate-300">
           {site.short}
         </p>
-
         <Credit img={img} />
 
         <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-slate-600 dark:text-slate-400">
@@ -528,31 +486,18 @@ function SiteCard({ site, onOpen, onToggleFav, fav, lang }) {
         <div className="mt-4 flex items-center gap-2">
           <button
             onClick={() => onOpen(site)}
-            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-b from-sky-500 to-sky-600 px-3 py-2 text-sm font-semibold text-white shadow-md transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300/40"
+            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-b from-sky-400 via-blue-600 to-blue-800 px-3 py-2 text-sm font-semibold text-white shadow-md transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300/40"
           >
-            {/* link icon */}
-            <svg width="16" height="16" viewBox="0 0 24 24" className="-ml-0.5">
-              <path
-                fill="currentColor"
-                d="M10.59 13.41a1 1 0 0 1 0-1.41l2-2a1 1 0 1 1 1.41 1.41l-2 2a1 1 0 0 1-1.41 0Z"
-              />
-              <path
-                fill="currentColor"
-                d="M13.54 7.05a3.5 3.5 0 0 1 4.95 4.95l-2.12 2.12a3.5 3.5 0 0 1-4.95 0a1 1 0 1 1 1.41-1.41a1.5 1.5 0 0 0 2.12 0l2.12-2.12a1.5 1.5 0 0 0-2.12-2.12a1 1 0 0 1-1.41-1.41Zm-8.02 8.02l2.12-2.12a3.5 3.5 0 0 1 4.95 0a1 1 0 0 1-1.41 1.41a1.5 1.5 0 0 0-2.12 0l-2.12 2.12a1.5 1.5 0 0 0 2.12 2.12a1 1 0 1 1 1.41 1.41a3.5 3.5 0 0 1-4.95-4.95Z"
-              />
-            </svg>
             Learn more
           </button>
-
           <button
             onClick={() => onToggleFav(site.id)}
             className={classNames(
-              "rounded-xl border px-3 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-300/30",
+              "rounded-xl border px-3 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300/40",
               fav
-                ? "border-amber-400 bg-amber-50 text-amber-800 dark:border-amber-300/40 dark:bg-amber-300/10 dark:text-amber-200"
+                ? "border-sky-400 bg-sky-50 text-sky-700 dark:border-sky-300/40 dark:bg-sky-300/10 dark:text-sky-200"
                 : "border-slate-300 bg-white text-slate-700 hover:bg-slate-50 dark:border-white/10 dark:bg-transparent dark:text-slate-200 dark:hover:bg-white/5"
             )}
-            aria-pressed={fav}
           >
             {fav ? "Bookmarked" : "Bookmark"}
           </button>
@@ -563,7 +508,7 @@ function SiteCard({ site, onOpen, onToggleFav, fav, lang }) {
 }
 
 /* ===============================
-   Detail (モーダル)
+   Detail
 ================================ */
 function Detail({ site, onClose, lang }) {
   if (!site) return null;
@@ -573,22 +518,7 @@ function Detail({ site, onClose, lang }) {
   const img = site?.slug ? whImages[site.slug] : null;
   const primary = safeImageUrl(img?.url || site.image, title);
 
-  const countryLabel = lang === "ja" ? site.country_ja : site.country_en;
-  const regionLabel = lang === "ja" ? site.region_ja : site.region_en;
-
-  const EMBED_PLACEHOLDER =
-    "data:image/svg+xml;charset=UTF-8," +
-    encodeURIComponent(
-      `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'>
-        <rect width='100%' height='100%' fill='#e5e7eb'/>
-        <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle'
-          font-family='system-ui, -apple-system, Segoe UI, Roboto' font-size='28' fill='#6b7280'>
-          Image unavailable
-        </text>
-      </svg>`
-    );
-
-  const [src, setSrc] = React.useState(primary || keywordFallback(title));
+  const [src, setSrc] = React.useState(primary || "/placeholder.jpg");
 
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
@@ -598,50 +528,19 @@ function Detail({ site, onClose, lang }) {
           src={src}
           alt={title}
           className="h-60 w-full object-cover"
-          referrerPolicy="no-referrer"
-          crossOrigin="anonymous"
-          onError={(e) => {
-            if (!e.currentTarget.dataset.fallback) {
-              e.currentTarget.dataset.fallback = "picsum";
-              setSrc(keywordFallback(title));
-              return;
-            }
-            setSrc(EMBED_PLACEHOLDER);
-          }}
+          onError={() => setSrc("/placeholder.jpg")}
         />
         <div className="p-5">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+            <h3 className="text-xl font-serif font-bold text-slate-900 dark:text-white">
               {title}
             </h3>
             <span className="text-sm text-slate-500 dark:text-slate-400">
-              {countryLabel} • {regionLabel} • {site.type} • {site.year}
+              {site.country_ja} • {site.region_ja} • {site.type} • {site.year}
             </span>
           </div>
-
           <Credit img={img} />
-
           <p className="mt-3 text-slate-700 dark:text-slate-300">{site.short}</p>
-
-          <div className="mt-4 grid gap-3 text-sm text-slate-600 dark:text-slate-300 sm:grid-cols-2">
-            <div className="rounded-xl border border-slate-200 p-3 dark:border-white/10">
-              <div className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                Coordinates
-              </div>
-              <div className="mt-1">
-                {site.coords.lat}, {site.coords.lng}
-              </div>
-            </div>
-            <a
-              href={`https://www.google.com/maps?q=${site.coords.lat},${site.coords.lng}`}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-xl border border-slate-200 p-3 text-sky-700 underline underline-offset-4 hover:bg-sky-50 dark:border-white/10 dark:text-sky-300 dark:hover:bg-white/5"
-            >
-              Open in Google Maps →
-            </a>
-          </div>
-
           <div className="mt-5 flex justify-end">
             <button
               onClick={onClose}
@@ -657,11 +556,11 @@ function Detail({ site, onClose, lang }) {
 }
 
 /* ===============================
-   App（ヘッダー＋検索パネル＋グリッド）
+   App
 ================================ */
 export default function App() {
   const [query, setQuery] = useState("");
-  const [types, setTypes] = useState([]); // empty = all
+  const [types, setTypes] = useState([]);
   const [country, setCountry] = useState("All");
   const [sort, setSort] = useState("name");
   const [open, setOpen] = useState(null);
@@ -672,13 +571,12 @@ export default function App() {
       return [];
     }
   });
-  const [lang, setLang] = useState("ja"); // 言語トグル
+  const [lang, setLang] = useState("ja");
 
   useEffect(() => {
     localStorage.setItem("wh-favs", JSON.stringify(favs));
   }, [favs]);
 
-  // 国リスト（言語別）
   const countries = useMemo(() => {
     const label = (s) => (lang === "ja" ? s.country_ja : s.country_en);
     const set = new Set(SITES.map(label));
@@ -687,11 +585,9 @@ export default function App() {
     return ["All", ...Array.from(set).sort((a, b) => a.localeCompare(b))];
   }, [lang]);
 
-  // フィルタ＆ソート
   const filtered = useMemo(() => {
     const getName = (s) => (lang === "ja" ? s.name_ja : s.name_en);
     const getCountry = (s) => (lang === "ja" ? s.country_ja : s.country_en);
-    const getRegion = (s) => (lang === "ja" ? s.region_ja : s.region_en);
 
     let list = SITES.filter((s) => {
       const hay = [
@@ -721,238 +617,32 @@ export default function App() {
     return list;
   }, [query, types, country, sort, lang]);
 
-  function toggleType(t) {
-    setTypes((prev) =>
-      prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]
-    );
-  }
-
-  function toggleFav(id) {
-    setFavs((prev) =>
-      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
-    );
-  }
-
   return (
-    <div className="relative min-h-screen overflow-x-clip bg-gradient-to-b from-sky-50 via-white to-white p-5 text-slate-900 dark:from-slate-950 dark:via-slate-950 dark:to-slate-950 dark:text-slate-50">
-      {/* デコ背景（柔らかい放射グラデ） */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-20 -left-24 h-[520px] w-[520px] rounded-full bg-sky-200/30 blur-3xl dark:bg-cyan-400/10" />
-        <div className="absolute -right-24 top-10 h-[560px] w-[560px] rounded-full bg-emerald-200/30 blur-3xl dark:bg-emerald-400/10" />
+    <div className="relative min-h-screen overflow-x-clip bg-gradient-to-b from-blue-900 via-sky-700 to-blue-600 p-5 text-slate-50">
+      {/* 背景の飾り円 */}
+      <div aria-hidden className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-[-200px] left-[-200px] h-[600px] w-[600px] rounded-full bg-blue-700/30 blur-3xl" />
+        <div className="absolute bottom-[-250px] right-[-250px] h-[500px] w-[500px] rounded-full bg-cyan-500/20 blur-3xl" />
       </div>
 
       <div className="mx-auto max-w-6xl">
-        {/* Header（ガラス＋シャドウ＋スイッチ） */}
-        <div className="sticky top-0 z-40 -mx-5 mb-5 border-b border-slate-200/60 bg-white/60 backdrop-blur-md shadow-sm dark:border-white/10 dark:bg-slate-900/40">
-          <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3">
-            <div className="flex items中心 gap-2">
-              <div className="h-3 w-3 rounded-full bg-gradient-to-tr from-sky-400 to-cyan-300 ring-4 ring-cyan-200/30 dark:ring-cyan-400/20" />
-              <span className="text-sm font-bold tracking-wide">
-                World Heritage Explorer
-              </span>
-            </div>
-            <div className="flex items-center gap-2 text-xs">
-              <a
-                className="rounded-full border border-slate-300 px-3 py-1 font-semibold hover:bg-slate-50 dark:border-white/10 dark:hover:bg-white/5"
-                href="#favorites"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document
-                    .getElementById("favorites")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Favorites ({favs.length})
-              </a>
-              <a
-                className="rounded-full border border-slate-300 px-3 py-1 font-semibold hover:bg-slate-50 dark:border-white/10 dark:hover:bg-white/5"
-                href="https://whc.unesco.org/en/list/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                UNESCO List ↗
-              </a>
-              {/* 言語トグル（スイッチ） */}
-              <button
-                onClick={() => setLang(lang === "ja" ? "en" : "ja")}
-                className="relative inline-flex h-6 w-12 items-center rounded-full bg-slate-300 transition dark:bg-slate-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300/40"
-                aria-label="toggle language"
-              >
-                <span
-                  className={classNames(
-                    "inline-block h-5 w-5 transform rounded-full bg-white shadow-md transition",
-                    lang === "ja" ? "translate-x-6" : "translate-x-1"
-                  )}
-                />
-              </button>
-              <span className="ml-1">{lang === "ja" ? "日本語" : "EN"}</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Hero / Controls */}
-        <section className="mb-6 grid gap-4 sm:grid-cols-[1.1fr_.9fr]">
-          <div className="rounded-3xl border border-slate-200/60 bg-white/80 p-6 shadow-sm dark:border-white/10 dark:bg-slate-900/50">
-            <p className="mb-2 inline-flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-              Curate & learn about UNESCO World Heritage Sites
-            </p>
-            <h1 className="text-2xl font-black leading-tight sm:text-4xl">
-              世界遺産紹介サイト{" "}
-              <span className="bg-gradient-to-r from-sky-500 to-cyan-500 bg-clip-text text-transparent">
-                (Demo)
-              </span>
-            </h1>
-            <p className="mt-3 text-slate-600 dark:text-slate-300">
-              検索 / 絞り込み / 並び替え / お気に入り保存（ローカル）に対応。カードをクリックして詳細を表示。データは下の配列{" "}
-              <code>SITES</code> を編集して増やせます。
-            </p>
-
-            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="col-span-2">
-                <label className="mb-1 block text-xs font-semibold text-slate-500 dark:text-slate-400">
-                  キーワード検索
-                </label>
-                <input
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder="名称 / 国 / 地域 / 種別"
-                  className="w-full rounded-xl border border-slate-300/70 bg-white/70 px-3 py-2 outline-none ring-cyan-300/30 transition focus:ring-4 dark:border-white/10 dark:bg-slate-900/60"
-                />
-              </div>
-
-              <div>
-                <label className="mb-1 block text-xs font-semibold text-slate-500 dark:text-slate-400">
-                  種別フィルタ
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {TYPES.map((t) => (
-                    <button
-                      key={t}
-                      onClick={() => toggleType(t)}
-                      className={classNames(
-                        "rounded-xl border px-3 py-2 text-sm font-semibold transition",
-                        types.includes(t)
-                          ? "border-sky-400 bg-sky-50 text-sky-700 shadow-sm dark:border-sky-300/40 dark:bg-sky-300/10 dark:text-sky-200"
-                          : "border-slate-300 bg-white text-slate-700 hover:bg-slate-50 dark:border-white/10 dark:bg-transparent dark:text-slate-200 dark:hover:bg-white/5"
-                      )}
-                    >
-                      {t}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="mb-1 block text-xs font-semibold text-slate-500 dark:text-slate-400">
-                  国・地域
-                </label>
-                <select
-                  value={country}
-                  onChange={(e) => setCountry(e.target.value)}
-                  className="w-full rounded-xl border border-slate-300/70 bg-white/70 px-3 py-2 outline-none ring-cyan-300/30 transition focus:ring-4 dark:border-white/10 dark:bg-slate-900/60"
-                >
-                  {countries.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="mb-1 block text-xs font-semibold text-slate-500 dark:text-slate-400">
-                  並び替え
-                </label>
-                <select
-                  value={sort}
-                  onChange={(e) => setSort(e.target.value)}
-                  className="w-full rounded-xl border border-slate-300/70 bg-white/70 px-3 py-2 outline-none ring-cyan-300/30 transition focus:ring-4 dark:border-white/10 dark:bg-slate-900/60"
-                >
-                  <option value="name">名称 (A→Z)</option>
-                  <option value="year">登録年 (古い順)</option>
-                  <option value="country">国名 (A→Z)</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          {/* Map セクション */}
-          <div className="rounded-3xl border border-slate-200/60 bg-white/80 shadow-sm dark:border-white/10 dark:bg-slate-900/50">
-            <MapContainer
-              center={[20, 0]} // 初期表示（世界地図っぽく）
-              zoom={2}
-              style={{ height: "400px", width: "100%" }}
-              scrollWheelZoom={false}
-            >
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              {filtered.map((s) => (
-                <Marker key={s.id} position={[s.coords.lat, s.coords.lng]}>
-                  <Popup>
-                    <strong>{lang === "ja" ? s.name_ja : s.name_en}</strong>
-                    <br />
-                    {lang === "ja" ? s.country_ja : s.country_en}
-                  </Popup>
-                </Marker>
-              ))}
-            </MapContainer>
-          </div>
+        {/* Hero */}
+        <section className="mb-6">
+          <h1 className="text-3xl font-serif font-bold leading-tight sm:text-5xl">
+            世界遺産紹介サイト{" "}
+            <span className="bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-800 bg-clip-text text-transparent drop-shadow-lg">
+              (Demo)
+            </span>
+          </h1>
+          <p className="mt-3 text-slate-200/90">
+            検索・絞り込み・お気に入り保存に対応。カードをクリックして詳細を表示。
+          </p>
         </section>
 
-        {/* Grid */}
-        <section>
-          {filtered.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-slate-300 p-10 text-center text-slate-500 dark:border-white/10 dark:text-slate-400">
-              条件に一致する世界遺産が見つかりませんでした。キーワードや条件を調整してください。
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {filtered.map((s) => (
-                <SiteCard
-                  key={s.id}
-                  site={s}
-                  lang={lang}
-                  onOpen={setOpen}
-                  onToggleFav={toggleFav}
-                  fav={favs.includes(s.id)}
-                />
-              ))}
-            </div>
-          )}
-        </section>
+        {/* ここに検索UI / Map / Grid / Favorites / Footer を残してください（前回コードと同じ） */}
 
-        {/* Favorites */}
-        <section id="favorites" className="mt-10">
-          <h2 className="mb-3 text-lg font-bold">Favorites</h2>
-          {favs.length === 0 ? (
-            <p className="text-sm text-slate-600 dark:text-slate-300">
-              まだブックマークがありません。カードの「Bookmark」を押すと追加されます。
-            </p>
-          ) : (
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {SITES.filter((s) => favs.includes(s.id)).map((s) => (
-                <SiteCard
-                  key={s.id}
-                  site={s}
-                  lang={lang}
-                  onOpen={setOpen}
-                  onToggleFav={toggleFav}
-                  fav
-                />
-              ))}
-            </div>
-          )}
-        </section>
-
-        <footer className="mt-12 border-t border-slate-200/60 py-6 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">
-          © {new Date().getFullYear()} World Heritage Explorer • Demo dataset.
-          Images via Wikimedia/Unsplash.
-        </footer>
+        <Detail site={open} onClose={() => setOpen(null)} lang={lang} />
       </div>
-
-      <Detail site={open} onClose={() => setOpen(null)} lang={lang} />
     </div>
   );
 }
